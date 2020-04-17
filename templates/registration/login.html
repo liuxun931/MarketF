@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block login %}
+
+{% if form.errors %}
+<p>您的用户名和密码错误. Please try again.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>您的账户无权访问此页面. To proceed,
+    please login with an account that has access.</p>
+    {% else %}
+    <p>请登录以查看页面内容.</p>
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<table>
+<tr>
+    <td>用户名</td>
+    <td>{{ form.username }}</td>
+</tr>
+<tr>
+    <td>密码</td>
+    <td>{{ form.password }}</td>
+</tr>
+</table>
+<button type="button" class="btn btn-light">Light</button>
+    <input type="submit" value="登录">
+    <input type="hidden" name="next" value="{{ next }}">
+
+
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block customers_create %}
+<!-- <div><p class="lead"><strong>新建顾客</strong></p></div> -->
+
+<form method="post" >{% csrf_token %}
+<div class="form-group">
+	<legend>新顾客信息</legend>
+    <table class="table">
+		{{ form.as_table }}
+    </table>
+		<button type="submit" value="Save" >提交</button>
+	</div>
+</form>
+{% endblock %}

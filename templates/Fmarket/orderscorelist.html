@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block OrderScoreList %}
+
+	<h2>积分订单列表</h2>
+	<div class="list-group">
+		
+        {% for o in order_list %}
+
+		<h5 class="mb-1">
+			<a class="list-group-item list-group-item-action" href = "Order/{{o.pk}}/">顾客: {{ o.orderer }}</a> </h5>
+			<li class="text-left">订单号: {{o.pk}}</li>
+			<li class="text-left">商品: {{ o.goods}} 金额: {{ o.cost}} </li>
+			<li class="text-left">购买日期: {{ o.cost}} </li>
+			<li class="text-left">本人积分: {{ o.orderer_sc}}  </li>
+			<li class="text-left">上一级: {{ o.up1}} 上一级积分: {{ o.up1_sc}}  </li>
+			<li class="text-left">上二级: {{ o.up2}} 上二级积分: {{ o.up2_sc}} </li>
+
+        {% endfor %}
+	
+{% endblock %}

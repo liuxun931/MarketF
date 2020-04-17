@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block customers_create %}
+<!-- <div><p class="lead"><strong>新建顾客</strong></p></div> -->
+
+<form method="post" class=>{% csrf_token %}
+	
+	<fieldset>
+	<legend>新顾客信息</legend>
+		{{ form | crispy }}
+		<!-- {{ form.as_p }} -->
+		<button type="submit" value="Save" >提交</button>
+	</fieldset>
+	
+</form>
+{% endblock %}

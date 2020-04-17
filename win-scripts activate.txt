@@ -1,0 +1,5 @@
+cd D:
+cd .\py_LearnCode\
+.\Scripts\activate
+cd .\MarketF\
+python.exe .\manage.py runserver 0.0.0.0:8000

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block orderscore_create %}
+<div>
+<form method="post">{% csrf_token %}
+    {{ form | crispy }}
+    <!-- {{ form.as_p }} -->
+    <input type="submit" value="Save">
+</form>
+
+<!-- <p><label for="id_test1">test input</label> <input type="number" name="test1" value="0"  id="id_test1"></p> -->
+<!-- <p><label for="id_test2">test input</label> <input type="number" name="test2" value="0"  id="id_test2"></p> -->
+<script>
+	$(document).ready(function(){
+		$("#id_test1").bind('input propertychange', function(){
+			$("#id_test2").attr("value", $(this).val()*100/1000)
+		})
+		
+		$("#id_cost").bind('input propertychange', function(){
+			s0 = $(this).val()*100/1000
+			s1 = $(this).val()*100/1000
+			s2 = $(this).val()*100/2000
+			
+			$("#id_orderer_sc").attr("value", 0)
+			$("#id_up1_sc").attr("value", parseFloat(s1).toFixed(0))
+			$("#id_up2_sc").attr("value", parseFloat(s2).toFixed(0))
+		})
+	
+	function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+	var csrftoken = getCookie('csrftoken');
+
+	function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection;
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+	$.ajaxSetup({
+		beforeSend: function(xhr, settings) {
+			if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			}
+		}
+	});
+	
+	})
+
+	<!-- //	获取上级收益人 -->
+	$("#id_orderer").bind('input propertychange', function(){
+			
+			var t = document.getElementById('id_orderer').value;
+			name = document.getElementById('id_orderer').selectedOptions[0].text;
+			<!-- console.log(name, t) -->
+			if( t > 0 ){
+				// start ajax
+				$.ajax({
+
+				// The URL for the request
+				url: "/Fmarket/ajax_model",
+	
+				// The data to send (will be converted to a query string)
+				data: {
+					orderer:name
+				},
+ 
+				// Whether this is a POST or GET request
+				type: "POST",
+ 
+				// The type of data we expect back
+				dataType : "json",
+				})
+				
+				.done(function(xhr, status, request) { 
+					u1 = request.responseJSON[0]['u1']
+					u2 = request.responseJSON[1]['u2']
+					console.log("u1=" + u1)
+					console.log("u2=" + u2)
+					d1 = document.getElementById("id_up1"); 
+					d2 = document.getElementById("id_up2");
+					
+					for (var i = 0; i < d1.options.length; i++){
+						if (d1.options[i].text == u1 ){
+							d1.value = i;
+							}
+						}
+
+					for (var i = 0; i< d2.options.length; i++){
+						if (d2.options[i].text == u2){
+							d2.value = i;
+							}
+						}
+
+					})
+				
+				//end ajax 
+				}
+
+		})
+	
+
+</script>
+
+
+
+</div>
+{% endblock %}

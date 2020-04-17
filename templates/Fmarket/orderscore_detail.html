@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% block orderscore_detail %}
+
+<h1>订单号：{{ object.orderscoreid }}</h1>
+<ul class="list-group">
+
+	<p class="list-group-item list-group-item-action">顾客: {{ object.orderer }} </p>
+	<p class="list-group-item list-group-item-action">金额: {{ object.cost }} </p>
+	<p class="list-group-item list-group-item-action">产品: {{ object.goods}} </p>
+	<p class="list-group-item list-group-item-action">订单日期: {{ object.orderdate}} </p>
+	<p class="list-group-item list-group-item-action">本人积分: {{ object.orderer_sc }}</p>
+	<p class="list-group-item list-group-item-action">上一级: {{ object.up1 }}</p>
+	<p class="list-group-item list-group-item-action">上一级积分: {{ object.up1_sc }}</p>
+	<p class="list-group-item list-group-item-action">上二级: {{ object.up2 }}</p>
+	<p class="list-group-item list-group-item-action">上二级积分: {{ object.up2_sc }}</p>
+
+</ul>
+
+<h4> <a href = '/Fmarket/Customer'>返回顾客列表</a></h4>
+
+{% endblock %}

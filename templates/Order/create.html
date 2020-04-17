@@ -1,0 +1,133 @@
+{% extends "product_base.html" %}
+
+{% block product %}
+<div class="container">
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    <div class ="text-center" style="padding-bottom:10%;padding-top:10%;">
+    <h2>新建订单</h2>
+    
+   <form method="post" >{% csrf_token %}
+   <div class="form-group">
+	 <legend>订单信息</legend>
+	 
+        <table class="table">{{ form.as_table }}</table>
+        
+		<button type="submit" value="Save" >提交</button>
+	</div>
+	</div>
+<!-- ajax  -->
+<script>
+// set up1_score, up2_score
+$(document).ready(function(){
+    // auto cal scores
+		$("#id_cost").bind('input propertychange', function(){
+			//s0 = $(this).val()*100/1000
+			s1 = $(this).val()*100/1000
+			s2 = $(this).val()*100/2000
+			
+			//$("#id_orderer_sc").attr("value", 0)
+			$("#id_up1_sc").attr("value", parseFloat(s1).toFixed(0))
+			$("#id_up2_sc").attr("value", parseFloat(s2).toFixed(0))
+		})
+
+    //get csrf_token
+	function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+	var csrftoken = getCookie('csrftoken');
+
+	function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection;
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+	$.ajaxSetup({
+		beforeSend: function(xhr, settings) {
+			if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+				xhr.setRequestHeader("X-CSRFToken", csrftoken);
+			}
+		}
+	});
+	
+	})
+//     end csrf_token
+
+
+	<!-- //	获取上级积分 -->
+	$("#id_orderer").bind('input propertychange', function(){
+			
+			t = document.getElementById('id_orderer').value;
+			name = document.getElementById('id_orderer').selectedOptions[0].text;
+			console.log(name, t) 
+			if( t > 0 ){
+				// start ajax
+				$.ajax({
+
+				// The URL for the request
+				url: "/Order/ajax_order/",
+	
+				// The data to send (will be converted to a query string)
+				data: {
+					orderer:name
+				},
+ 
+				// POST or GET request
+				type: "POST",
+ 
+				// The type of data we expect back
+				dataType : "json",
+				})
+				
+				.done(function(xhr, status, request) { 
+					u1 = request.responseJSON[0]['u1']
+					u2 = request.responseJSON[1]['u2']
+					//console.log("u1=" + u1)
+					//console.log("u2=" + u2)
+					d1 = document.getElementById("id_up1"); 
+					d2 = document.getElementById("id_up2");
+					
+					d1.value = u1
+					d2.value = u2
+// 					// used to try adjust options.
+// 					for (var i = 0; i < d1.options.length; i++){
+// 						if (d1.options[i].text == u1 ){
+// 							d1.value = i;
+// 							}
+// 						}
+
+// 					for (var i = 0; i< d2.options.length; i++){
+// 						if (d2.options[i].text == u2){
+// 							d2.value = i;
+// 							}
+// 						}
+
+					})
+				
+				//end ajax 
+				}
+
+		})
+	
+</script>
+<!-- end ajax -->
+	
+
+</form>
+</div>
+
+</div>
+</div>
+{% endblock %}

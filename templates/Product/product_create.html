@@ -1,0 +1,21 @@
+{% extends "product_base.html" %}
+
+{% block product %}
+<div class="container">
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<div class ="text-center" style="padding-bottom:10%;padding-top:10%;">
+    <h2>新建产品</h2>
+    
+   <form method="post" >{% csrf_token %}
+<div class="form-group">
+	<legend>产品信息</legend>
+    <table class="table">
+		{{ form.as_table }}
+    </table>
+		<button type="submit" value="Save" >提交</button>
+	</div>
+</form>
+
+{% endblock %}

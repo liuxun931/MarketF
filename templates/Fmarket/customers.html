@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block customers %}
+
+    <h2>顾客清单</h2>
+    <ul class="list-group">
+
+		{% for c in object_list %}
+			<li class="list-group-item"><a href = '/Fmarket/Customer/{{c.pk}}/'> 姓名： {{ c.name }} - {{ c.score }} 积分</a></li> 
+		{% endfor %}
+    </ul>
+
+	<h2>订单列表</h2>
+    <ul class = "list-group">
+        {% for o in order_list %}
+            <li class="list-group-item"> <a href = 'OrderScore/{{o.pk}}/'>顾客: {{ o.orderperson }} 订单号: {{o.pk}} 金额: {{ o.cost}}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

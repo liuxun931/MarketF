@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load render_table from django_tables2 %}
+
+{% block querycustomerorder %}
+
+<h1>顾客订单查询：{{ object.name }}</h1>
+<div class="container">
+<div class="row">
+
+<form method="post" class=>{% csrf_token %}
+	<legend>订单信息</legend>
+	
+
+
+	<button type="submit" value="Save" >提交</button>
+
+</form>
+
+
+<table>
+	{% for o in orders %}
+            <li class="list-group-item"> 
+				顾客: {{ o.orderperson }} 商品: {{o.goods}} 金额: {{ o.cost}} 
+				订单日期: {{ object.orderdate}} 本人积分: {{ object.orderer_sc }} 上一级: {{ object.up1 }} 上二级: {{ object.up2 }}
+			</li>
+    {% endfor %}
+
+</table>
+ {% render_table orders %}
+</div>
+</div>
+{% endblock %}

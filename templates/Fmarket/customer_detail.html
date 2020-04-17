@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block customers %}
+
+<h1>{{ object.name }}</h1><a href="/Fmarket/querycustomerorders/{{object.pk}}/">相关订单</a>
+<ul class="list-group">
+
+	<p class="list-group-item list-group-item-action">顾客编号: {{ object.id }} </p>
+	<p class="list-group-item list-group-item-action">手机号码: {{ object.phonenumber }} </p>
+	<p class="list-group-item list-group-item-action">身份证号码: {{ object.idnumber}} </p>
+	<p class="list-group-item list-group-item-action">积分ID: {{ object.score_id}} </p>
+	<p class="list-group-item list-group-item-action">积分: {{ object.score }}</p>
+	<p class="list-group-item list-group-item-action">首选地址: {{ object.customeraddress1 }}</p>
+
+</ul>
+
+<h4> <a href = '/Fmarket/Customer'>返回顾客列表</a></h4>
+<div><a href = "/Fmarket/Customer/Update/{{object.pk}}">UPdate ME</a></div>
+<div><a href = "/Fmarket/Customer/Delete/{{object.pk}}">Delete ME</a></div>
+
+{% endblock %}

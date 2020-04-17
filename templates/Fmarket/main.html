@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block Mainpage %}
+<!-- Mainpage -->
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class ="text-center">
+
+				<div><p class="lead"><strong>测试用主页</strong></p></div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+{% load static %}
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class ="text-center">
+				<a href="http://localhost:8000/Fmarket/Customer">
+					<img src="{% static "Fmarket/fruit_mht.jpg" %}" class="rounded-circle" style="width:180px;height:120px;" alt="Responsive image" title="客户列表">
+					</a>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class ="text-center">
+					<a href="http://localhost:8000/Fmarket/OrderScoreCreate">
+						<img src="{% static "Fmarket/fruit_store.jpg" %}" class="rounded-circle" style="width:180px;height:120px;" alt="Responsive image" title="新建订单">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class ="text-center">
+						<a href="http://localhost:8000/Fmarket/OrderScoreList">
+							<img src="{% static "Fmarket/benz.jpg" %}" class="rounded-circle" style="width:180px;height:120px;" alt="Responsive image" title="订单列表">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+<div class="container">
+<div class="row">
+	<div class="col-md-4">
+		<div class ="text-center">
+				<a href="/User/">用户列表</a>
+                <a href="/User/create/">新建用户</a>
+			</div>
+		</div>
+	<div class="col-md-4">
+		<div class ="text-center">
+			<a href="/Product/">产品表</a>
+			<a href="/Product/Create/">新建产品</a>
+			</div>
+		</div>
+<div class="col-md-4">
+		<div class ="text-center">
+			<a href="/Order/">订单列表</a>
+			<a href="/Order/create/">下订单</a>
+			<a href="/Ship/">物流汇总</a>
+			</div>
+		</div>
+		</div>
+</div>
+{% endblock %}
