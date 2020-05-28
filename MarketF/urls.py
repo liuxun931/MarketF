@@ -23,8 +23,6 @@ from django.contrib.auth import views as auth_views
 
 from Fmarket import views
 
-
-
 sitemaps = {
     'static': FmarketSitemap,
 }
@@ -47,6 +45,8 @@ urlpatterns = [
     path('Cart/', include('Cart.urls')),
     path('DashBoard/', include('DashBoard.urls')),
     #path('Pay/', include('Pay.urls')),
+    path(r'Portal/', views.PortalView.as_view(),),
+    path(r'Portal2/', views.PortalView2.as_view(),),
     
     # sitemap path
     # path(r'accounts/', include('allauth.urls')),
@@ -55,5 +55,7 @@ urlpatterns = [
     # django-allauth path
     path('accounts/login/', auth_views.LoginView.as_view(template_name='Fmarket/login.html')),
     path('accounts/logout/', views.LogoutView.as_view(), ),
+    path('accounts/permission_error/', views.PermissionError.as_view(), ),
+    path('accounts/profile/', views.PortalView.as_view(),),
     path('accounts/', include('django.contrib.auth.urls'), ),
 ]

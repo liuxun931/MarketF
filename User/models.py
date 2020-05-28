@@ -22,7 +22,7 @@ class EndUser(User):
     
     id_number = models.CharField(max_length=18, blank = True, verbose_name='身份证号')
     
-    wechat = models.CharField(max_length=11, blank = True)
+    wechat = models.CharField(max_length=11, blank = True, verbose_name='微信')
     
     score_id = models.CharField(max_length=21, unique = True, verbose_name='积分ID')
     
@@ -37,3 +37,12 @@ class EndUser(User):
     
     def __str__(self):
         return self.username
+
+
+class UserImg(models.Model):
+    user = models.ForeignKey('EndUser', on_delete=models.CASCADE,)
+    img_title = models.CharField(max_length=18, blank = True)
+    image = models.ImageField(upload_to='media', height_field=160, width_field=90, max_length=300, )
+    
+    def __unicode__(self):  
+        return self.title

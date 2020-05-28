@@ -3,6 +3,36 @@
 {% block Mainpage %}
 <!-- Mainpage -->
 
+<div class="container-fluid">
+	<div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0">
+		<style>
+			.jumbotron{	
+			<!-- background: url('http://placekitten.com/800/500') no-repeat center center; -->
+			  background-size: cover;
+			<!-- background-color:gray; -->
+			  padding-top: 20%;
+			  padding-bottom: 5%;
+			}
+		</style>
+		<!-- 大标题 -->
+		<div class="bg-info mx-auto text-white">
+			<style>
+				.bg-info{
+					padding-top: 5%;
+					padding-bottom: 5%;
+				}
+			</style>
+			<h1 class="display-3">随时掌握最新市场</h1>
+			<h3 class="display-4">请移步Dashboard</h3> 
+
+
+		</div>
+		<!-- 大标题 end -->
+	</div>
+	
+</div>
+
+
 <div class="container">
 
 	<div class="row">
@@ -10,7 +40,7 @@
 		<div class="col-md-4">
 			<div class ="text-center">
 
-				<div><p class="lead"><strong>测试用主页</strong></p></div>
+				<div><p class="lead"><strong>管理层主页</strong></p></div>
 
 			</div>
 		</div>
@@ -54,6 +84,34 @@
 		<div class ="text-center">
 				<a href="/User/">用户列表</a>
                 <a href="/User/create/">新建用户</a>
+				<a href="/Portal/">Portal</a>
+				<a href="/Portal2/">Portal2</a>
+			</div>
+		</div>
+	<div class="col-md-4">
+		<div class ="text-center">
+			<a href="/Product/">产品表</a>
+			<a href="/Product/Create/">新建产品</a>
+			</div>
+		</div>
+<div class="col-md-4">
+		<div class ="text-center">
+			<a href="/Order/">订单列表</a>
+			<a href="/Order/create/">下订单</a>
+			<a href="/Ship/">物流汇总</a>
+			</div>
+		</div>
+		</div>
+</div>
+
+<div class="container">
+<div class="row">
+	<div class="col-md-4">
+		<div class ="text-center">
+				<p><a href="/DashBoard/">Dashboard</a></p>
+                <a href="/User/create/">新建用户</a>
+				<a href="/Portal/">Portal</a>
+				<a href="/Portal2/">Portal2</a>
 			</div>
 		</div>
 	<div class="col-md-4">

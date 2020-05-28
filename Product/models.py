@@ -1,4 +1,6 @@
+import os.path
 from django.db import models
+
 
 # Create your models here.
 
@@ -20,3 +22,16 @@ class Products(models.Model):
     
     def __str__(self):
         return self.name
+
+
+def user_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<name>/<filename>
+    return 'user_{0}/{1}'.format(instance.user.name, filename)
+
+class ProductImgs(models.Model):
+    product = models.ForeignKey('Products', on_delete=models.CASCADE,)
+    img_title = models.CharField(max_length=18, blank = True)
+    image = models.ImageField(upload_to='media', height_field=300, width_field=450, max_length=300, )
+    
+    def __unicode__(self):  
+        return self.title

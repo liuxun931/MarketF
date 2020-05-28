@@ -1,10 +1,12 @@
 from django.db import models
 
 from datetime import date
+from django.utils.timezone import now
 
 from User.models import EndUser
 from Pay.models import Payment
 from Product.models import Products
+
 
 
 # Create your models here.
@@ -33,7 +35,7 @@ class AbstractOrder(models.Model):
     # 一个订单印上一个购买日期-不可更改;
     #orderer在views 中需要只能挑选自己定义或用过的地址
     orderer = models.ForeignKey('User.EndUser', on_delete=models.CASCADE, ) 
-    orderdate = models.DateField(auto_now=False,default=date.today())
+    orderdate = models.DateField(auto_now=False,default=now().today())
     payment = models.ForeignKey('Pay.Payment', on_delete=models.CASCADE, null    = True)
     payment_type = models.CharField(max_length = 12, choices=[('CASH', 'cash'), ( 'SCORES', 'scores'), ], default = 'cash')
     #goods_list - see items 

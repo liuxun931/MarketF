@@ -25,7 +25,7 @@ SECRET_KEY = 'yo&tpvco)#1$=^@9%pvqx*esxt2y*0ow1_zv7_6k_%9t0yca+h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ '*' ]
 
 
 # Application definition
@@ -51,9 +51,11 @@ INSTALLED_APPS = [
     'DashBoard',
 ]
 
-
+LOGIN_REDIRECT_URL = '/Portal/'
+LOGOUT_REDIRECT_URL = '/Portal/'
 
 SITE_ID = 1
+
 # Provider specific settings
 
 SOCIALACCOUNT_PROVIDERS = {
@@ -71,11 +73,6 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 
-
-#SET FORM bootsrtap version
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-# CRISPY_TEMPLATE_PACK = 'uni_form'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -88,7 +85,7 @@ MIDDLEWARE = [
 
 # csrf error with ajax request
 CSRF_COOKIE_HTTPONLY = False
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
 CSRF_TRUSTED_ORIGINS = ['localhost',]
 
 ROOT_URLCONF = 'MarketF.urls'
@@ -116,8 +113,9 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods, such as login by e-mail
     # 'allauth.account.auth_backends.AuthenticationBackend',
-
 )
+
+LOGIN_URL = '/accounts/login/'
 
 WSGI_APPLICATION = 'MarketF.wsgi.application'
 
@@ -155,8 +153,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+# TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
-TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -169,6 +168,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"), ]
+
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+MEDIA_URL = '/media/'

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block Mainpage %}
+<!-- Mainpage -->
+
+<div class="container-fluid">
+	<div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0">
+		<style>
+			.jumbotron{	
+			<!-- background: url('http://placekitten.com/800/500') no-repeat center center; -->
+			  background-size: cover;
+			<!-- background-color:gray; -->
+			  padding-top: 20%;
+			  padding-bottom: 5%;
+			}
+		</style>
+		<!-- 大标题 -->
+		<div class="bg-info mx-auto text-white">
+			<style>
+				.bg-info{
+					padding-top: 5%;
+					padding-bottom: 5%;
+				}
+			</style>
+			<h1 class="display-3">欢迎购买优质种植的农产品</h1>
+			<h3 class="display-4">请您移步至商铺页面</h3> 
+
+
+		</div>
+		<!-- 大标题 end -->
+	</div>
+	
+</div>
+
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class ="text-center">
+
+				<div><p class="lead"><strong>buyer_mainpage</strong></p></div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container">
+{% load static %}
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class ="text-center">
+				<a href="http://localhost:8000/Fmarket/Customer">
+					<img src="{% static "Fmarket/fruit_mht.jpg" %}" class="rounded-circle" style="width:180px;height:120px;" alt="Responsive image" title="客户列表">
+					</a>
+				</div>
+			</div>
+
+
+
+<div class="container">
+<div class="row">
+	<div class="col-md-4">
+		<div class ="text-center">
+				<a href="/Portal/">Portal</a>
+				<a href="/Portal2/">Portal2</a>
+			</div>
+		</div>
+
+
+
+{% endblock %}

@@ -10,6 +10,7 @@ urlpatterns = [
     # all starts with /Product/
     path('', ProductMain.as_view(), name = 'ProductMain'), 
     path('Create/', ProductCreate.as_view()),
+    path('Detail/', ProductDetail.as_view()),
 ]
 
 '''

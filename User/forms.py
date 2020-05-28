@@ -29,14 +29,4 @@ class UserCreateForm(ModelForm):
         help_texts = {
             'username':   _('可以用中文'),
             'groups':       _('可多选'),
-
             }
-        #field_classes = {
-            #'password': forms.PasswordInput,
-            #}
-
-
-#class testform(ModelForm):
-    #class Meta:
-        #model = User
-        #fields = [ 'date_joined', 'email', 'first_name',  'groups',  'id', 'is_active', 'is_staff', 'is_superuser', 'last_login', 'last_name',  'password', 'user_permissions', 'username',]

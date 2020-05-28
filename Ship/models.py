@@ -17,6 +17,9 @@ class ShippingAddress(models.Model):
     receiver_city = models.CharField(max_length = 20)
     receiver_dist = models.CharField(max_length = 20)
     receiver_addr = models.CharField(max_length = 20)
+    
+    def __str__(self):
+        return self.receiver_province+self.receiver_city+self.receiver_addr 
 
 class Shipment(models.Model):
     # （地址 -> 快递 <- 订单）组成一个shippment一个发货只对应一个订单;字段包括：   

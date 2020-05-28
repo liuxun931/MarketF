@@ -6,33 +6,34 @@
 	<!-- <meta name="viewport" content="width=device-width"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-	<!-- bootstrap -->
+	<!-- bootstrap CSS-->
 	<link rel="stylesheet" href="{% static "bootstrap/bootstrap.css" %}"  crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static "chartjs/Chart.css" %}"  crossorigin="anonymous">
+
 
 	<title>农产品客户关系管理</title> 
 </head>
 
 
-			<body>
-			
-				<script src="{% static "js/jquery-3.4.1.js" %}"></script>
+<body>
+<script src="{% static "js/jquery-3.4.1.js" %}"></script>
+<script src="{% static "chartjs/Chart.js" %}"></script>
 
-				<!-- vue.js -->
-				<!-- 开发环境版本，包含了有帮助的命令行警告 -->
-				<script src="{% static "js/vue.js" %}"></script>
 
-				<!-- 生产环境版本，优化了尺寸和速度 -->
-				<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+<!-- load js -->
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<!-- <script src="{% static "js/vue.js" %}"></script> -->
 
-				<!-- Bootstrap -->
-				<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
-				<script src="{% static "bootstrap/popper.min.js" %}" crossorigin="anonymous">
-				</script>
-				<script src="{% static "bootstrap/bootstrap.js" %}"   crossorigin="anonymous">
-				</script>
+
+<!-- 生产环境版本，优化了尺寸和速度 -->
+<script src="{% static "js/vue-production.js" %}"></script>
+
+<script src="{% static "bootstrap/popper.min.js" %}" crossorigin="anonymous"></script>
+<script src="{% static "bootstrap/bootstrap.js" %}"   crossorigin="anonymous"></script>
 
 
 				<!-- navi bar -->
+				<div>
 				<nav class="navbar navbar-expand-lg navbar-light bg-light">
 					<a class="navbar-brand" href="#">欢迎！</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,69 +43,53 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item active">
-								<a class="nav-link" href="/">主页 <span class="sr-only">(current)</span></a>
+								<a class="nav-link" href="/Portal/">主页 <span class="sr-only">(current)</span></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">APP（无）</a>
+								<a class="nav-link" href="/Portal/">APP（无）</a>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							办理
+								<a class="nav-link dropdown-toggle" href="/Fmarket/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							卖家登录
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">顾客管理</a>
-									<a class="dropdown-item" href="#">订单管理</a>
+									<a class="dropdown-item" href="/Fmarket/">下订单</a>
+									<a class="dropdown-item" href="/Fmarket/">订单管理</a>
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="#">管理登陆</a>
+
 								</div>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link disabled" href="#">主营方：文叶叶的特优农产市场</a>
+								<a class="nav-link disabled" href="#">主营方：文叶叶的特优农产品市场</a>
 							</li>
 						</ul>
-						<form class="form-inline my-2 my-lg-0">
-							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-								<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-							</form>
+						<div class="form-inline my-2 my-lg-0">
+							{% if user.username == '' %}
+								<p><a href="/accounts/login/">登录</a><p/>
+							{% else %}
+								<!-- <p>您好：<a href="/User/home/{{user.pk}}">{{user.username}}</a>, <a href='/accounts/logout/'>退出登录</a></p> -->
+								<p>您好：<a href="/User/home/">{{user.username}}</a>, <a href='/accounts/logout/'>退出登录</a></p>
+							{% endif%}
+						</div>
 							
 						</div>
 					</nav>
-
+					</div>
 					<!-- end navi -->
 
-					<div class="container-fluid">
-						<div class="jumbotron jumbotron-fluid text-center" style="margin-bottom:0">
-							<style>
-								.jumbotron{	
-								<!-- background: url('http://placekitten.com/800/500') no-repeat center center; -->
-								  background-size: cover;
-								<!-- background-color:gray; -->
-								  padding-top: 20%;
-								  padding-bottom: 5%;
-								}
-							</style>
-							<!-- 大标题 -->
-							<div class="bg-info mx-auto text-white">
-								<style>
-									.bg-info{
-										padding-top: 5%;
-										padding-bottom: 5%;
-									}
-								</style>
-								<h1 class="display-3">农产品客户订单与返利</h1>
-								<h3 class="display-4">顾客与订单积分管理</h3> 
 
+	{% block layer2 %}
+	
+	{% endblock %}
 
-							</div>
-							<!-- 大标题 end -->
-
-						</div>
 
 	{% block Mainpage %}
 						<!-- Mainpage -->
 	{% endblock %}
 
-</div>
+	{% block dashboard %}
+
+	{% endblock %}
 
 
 	{% block customer_order_table %}
@@ -123,35 +108,34 @@
             <!-- User APP -->
 		{% endblock %}
 		
-			<div class="col-md-4"></div>
+			<div class="col-md-4"></div> 
+			
 			<div class="col-md-4">
 				<div class ="text-center">
 
-
-
-										<!--            CUSTOMERS               -->
+	<!--            CUSTOMERS               -->
 	{% block customers %}
-	<!-- CustomerList -->
+
 	{% endblock %}
 
 	{% block customers_create %}
-										<!-- Customer_Create -->
+		<!-- Customer_Create -->
 	{% endblock %}
 
 	{% block customers_update %}
-										<!-- customers_update -->
+		<!-- customers_update -->
 	{% endblock %}
 
 	{% block CustomerDelete %}
-										<!-- CustomerDelete -->
+		<!-- CustomerDelete -->
 	{% endblock %}
 
 	{% block orders %}
-				<!-- Orders -->
+		<!-- Orders -->
 	{% endblock %}
 
 
-				<!--            ORDERS              -->
+	<!--            ORDERS              -->
 	{% block order_detail %}
 		<!-- order_detail -->
 	{% endblock %}
@@ -188,29 +172,47 @@
     {% block login %}
     <!--login view-->
     {% endblock %}
-
 	
-	
-										</div>
-									</div>
-								</div>
-					<div class="col-md-4"></div>
-							
-							<div class="container">
-								<div class="row">
-									<div class="col-md-4"></div>
-									<div class="col-md-4">
-										<div class ="text-center" style="padding-bottom:20%;padding-top:20%;">
+	{% block perm-error %}
 
-											<a href = '/Fmarket/main.html'>返回主页</a>
-											<a href = '/accounts/logout'> 退出登录</a>
+	{% endblock %}
 
-										</div>
-									</div>
-								</div>
-							</div>
+			</div>
+		</div>
+	</div>
+	</div>
 
-						</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class ="text-center" style="padding-bottom:20%;padding-top:20%;">
 
-				</body>
-			</html>
+				<a href = '/Portal/'>返回主页</a>
+				<a href = '/accounts/logout'> 退出登录</a>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: black;
+    color: #fff;
+}
+</style>
+<div class="modal-footer">
+<div class="container">
+<div class="row">
+	  <p>Coded by: Xun.Liu James</p>
+	  <p>Email: <a href="mailto:liuxun931@163.com">liuxun931@163.com</a></p>
+</div>
+</div>
+</div> 
+
+</body>
+</html>

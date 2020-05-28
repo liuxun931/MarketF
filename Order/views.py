@@ -1,27 +1,32 @@
 # import Ajax response
 from django.http import JsonResponse  # for  Ajax form
 from django.shortcuts import HttpResponse
+
 #import models
 from User.models import EndUser
 from Order.models import Order
 from Product.models import Products
 from Ship.models import Shipment, ShippingAddress
+
 # import view class
 from django.views.generic.detail import DetailView
-from django.views.generic.base import TemplateView, TemplateResponseMixin, View
+from django.views.generic.base import TemplateView
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from Fmarket.views import MyPermRequireMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 # import python lib
 import json,time
+from django.utils.timezone import now
 
 #import form
 from Order.forms import OrderCreateForm
 
 # Create your views here.
 
-
-class OrderList(LoginRequiredMixin, ListView):  
+class OrderList(MyPermRequireMixin, ListView):
+    permission_required = ('Order.view_order', )
     queryset = Order.objects.all()[:10]
     login_url = '/accounts/login/'
     template_name = 'Order/order.html'
@@ -31,12 +36,14 @@ class OrderList(LoginRequiredMixin, ListView):
         context['orders'] = Order.objects.order_by('-orderdate')[:10]
         return context
 
-class OrderCreate(LoginRequiredMixin, CreateView):
+class OrderCreate(MyPermRequireMixin, CreateView):
+    permission_required = ('Order.add_order', )
     model = Order
     form_class = OrderCreateForm
     template_name = 'Order/create.html'
     success_url = '/Order/'
     
+
     def post(self, request, *args, **kwargs):
         """
         get uplvl1, uplvl2 and add scores to them
@@ -123,3 +130,9 @@ def Ajax_Order(request):
 
 
 ###   end ajax 
+
+
+
+###  portal views
+
+

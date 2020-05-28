@@ -1,0 +1,193 @@
+{% extends "base_layer2.html" %}
+{% load static %}
+
+{% block Portal %}
+
+
+  <div class="container">
+
+    <div class="row">
+	<!-- col-lg-3 catalog-->
+	
+      <div class="col-lg-3">
+	  
+	  <div class ="text-center">
+        <h3 class="my-4" id = "catalog-title">时令水果鲜蔬</h3>
+		<!-- catalog color -->
+						<style> 
+						#catalog-title{
+							color:#FF0036;
+						}
+
+						#side-catalog{
+							color:rgb(255,255,255);
+							background: #FF0036;
+							font-size: 18px;
+						}
+
+						</style>
+		<img src="{% static "pic examples/tmall.gif" %}"  style="width:210px;height:130px;" alt="Responsive image"></img>
+		
+		</div>
+        <div class="list-group">
+	    <a href="#" class="list-group-item" id="side-catalog">本店爆款</a>
+	    <a href="#" class="list-group-item" id="side-catalog">当季热卖</a>
+	    <a href="#" class="list-group-item" id="side-catalog">水果</a>
+	    <a href="#" class="list-group-item" id="side-catalog">蔬菜</a>
+	    <a href="#" class="list-group-item" id="side-catalog">特供品类</a>
+	    <a href="#" class="list-group-item" id="side-catalog">原生态采摘</a>
+	    <a href="#" class="list-group-item" id="side-catalog">本地特色</a>
+        </div>
+		
+		</div>
+
+    <!--end col-lg-3 catalog -->
+
+	<!-- col-lg-9  'carousel'-->
+	
+      <div class="col-lg-9">
+
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2" class="active"></li>
+          </ol>
+		
+		
+		<!-- end col-lg-9  'carousel'-->
+		
+		<!--  search bar   -->
+		
+		<style>
+			#search-bar{
+				padding-top:8%;
+				padding-bottom:8%;
+			}
+		</style>
+			<div class="input-group mb-3" id="search-bar">
+			  <div class="input-group-prepend">
+				<span class="input-group-text" style = "color:white;font-size:18px;background-color:#FF0036;border-color:#FF0036;">搜一搜</span>
+			  </div>
+			  <input type="text" class="form-control" placeholder="今日特供" aria-label="搜索" aria-describedby="basic-addon1" style = "font-size: 18px;border-color:#FF0036;">
+			</div>
+		<!-- end search bar -->
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <img class="d-block img-fluid" src="{% static "pic examples/900-350/cherrie.jpg" %}"  style="width:950px;height:350px;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="{% static "pic examples/900-350/caijiao.jpg" %}"  style="width:950px;height:350px;">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block img-fluid" src="{% static "pic examples/900-350/migua.jpg" %}"  style="width:950px;height:350px;">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{% static "pic examples/250-150/huanggua.jpg" %}"  style="width:250px;height:150px;"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="/Product/Detail/">黄瓜一号</a>
+                </h4>
+                <h5>￥ 25.00/500g</h5>
+                <p class="card-text">【包邮顺丰】农大姐妹  - Productdetails Test</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{% static "pic examples/250-150/huanggua2.jpg" %}"  style="width:250px;height:150px;"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">黄瓜一号</a>
+                </h4>
+                <h5>￥ 25.00/500g</h5>
+                <p class="card-text">【包邮顺丰】农大姐妹 水果小黄瓜5斤 现摘小青瓜 山东寿光特产蔬菜沙拉菜水果黄瓜</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{% static "pic examples/250-150/黄瓜.jpg" %}"  style="width:250px;height:150px;"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">黄瓜一号</a>
+                </h4>
+                <h5>￥ 25.00/500g</h5>
+                <p class="card-text">【包邮顺丰】农大姐妹 水果小黄瓜5斤 现摘小青瓜 山东寿光特产蔬菜沙拉菜水果黄瓜</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{% static "pic examples/250-150/huanggua2.jpg" %}"  style="width:250px;height:150px;"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">黄瓜一号</a>
+                </h4>
+                <h5>￥ 25.00/500g</h5>
+                <p class="card-text">【包邮顺丰】农大姐妹 水果小黄瓜5斤 现摘小青瓜 山东寿光特产蔬菜沙拉菜水果黄瓜</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{% static "pic examples/250-150/黄瓜.jpg" %}"  style="width:250px;height:150px;"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">黄瓜一号</a>
+                </h4>
+                <h5>￥ 25.00/500g</h5>
+                <p class="card-text">【包邮顺丰】农大姐妹 水果小黄瓜5斤 现摘小青瓜 山东寿光特产蔬菜沙拉菜水果黄瓜</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="{% static "pic examples/250-150/黄瓜.jpg" %}"  style="width:250px;height:150px;"></a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a href="#">黄瓜一号</a>
+                </h4>
+                <h5>￥ 25.00/500g</h5>
+                <p class="card-text">【包邮顺丰】农大姐妹 水果小黄瓜5斤 现摘小青瓜 山东寿光特产蔬菜沙拉菜水果黄瓜</p>
+              </div>
+			  									<div class="p-icons"  id="J_pro_66022405480">
+												<i class="goods-icons3 J-picon-tips J-picon-fix" data-tips="该商品是当季新品">新品</i>
+												</div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+
+
+{% endblock %}

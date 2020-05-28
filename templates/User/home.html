@@ -1,0 +1,115 @@
+{% extends "base_layer2.html" %}
+{% load static %}
+
+{% block Portal %}
+
+
+  <div class="container">
+
+    <div class="row">
+	
+	<div class="col-md-4"></div>
+		<div class="col-md-4">
+			<div class ="text-center" style="padding-bottom:20%;padding-top:20%;">
+
+			<p>{{enduser}}: </p>
+			<p>积分：{{enduser.score}}</p>
+
+		</div>
+	</div>
+	
+	
+	<table class="table table-sm table-bordered table-striped table-hover" >
+	<caption>我的订单</caption>
+	<thead>
+	<tr>
+		<th scope="col">买家</th>
+		<th scope="col">金额：元</th>
+		<th scope="col">订单状态</th>
+		<th scope="col">订单日期</th>
+		<th scope="col">上一级</th>
+		<th scope="col">上一级积分</th>
+		<th scope="col">上二级</th>
+		<th scope="col">上二级积分</th>
+	</tr>
+	</thead>
+  
+	<tbody>
+	{% for c in orders %}
+	<tr>
+		<th scope="row">{{ c.orderer }} </th>
+		<td> {{ c.cost }}</td>
+		<td> {{ c.order_status }}</td>
+		<td> {{ c.orderdate}} </td>
+		<td>{{ c.up1 }}</td>
+		<td>{{ c.up1_sc }}</td>
+		<td>{{ c.up2}}</td>
+		<td>{{ c.up2_sc}}</td>
+	</tr>
+	{% endfor %}
+
+	</tbody>
+  
+</table>    
+
+
+	<table class="table table-sm table-bordered table-striped table-hover" >
+	<caption>获得积分的订单</caption>
+	<thead>
+	<tr>
+		<th scope="col">买家</th>
+		<th scope="col">金额：元</th>
+		<th scope="col">订单状态</th>
+		<th scope="col">订单日期</th>
+		<th scope="col">上一级</th>
+		<th scope="col">上一级积分</th>
+		<th scope="col">上二级</th>
+		<th scope="col">上二级积分</th>
+	</tr>
+	</thead>
+		
+	<tbody>
+	{% for c in orders_up1 %}
+	<tr>
+		<th scope="row">{{ c.orderer }} </th>
+		<td> {{ c.cost }}</td>
+		<td> {{ c.order_status }}</td>
+		<td> {{ c.orderdate}} </td>
+		<td>{{ c.up1 }}</td>
+		<td>{{ c.up1_sc }}</td>
+		<td>{{ c.up2}}</td>
+		<td>{{ c.up2_sc}}</td>
+	</tr>
+	{% endfor %}
+	
+	
+	{% for c in orders_up2 %}
+	<tr>
+		<th scope="row">{{ c.orderer }} </th>
+		<td> {{ c.cost }}</td>
+		<td> {{ c.order_status }}</td>
+		<td> {{ c.orderdate}} </td>
+		<td>{{ c.up1 }}</td>
+		<td>{{ c.up1_sc }}</td>
+		<td><span>{{ c.up2 }}</span></td>
+		<td>{{ c.up2_sc}}</td>
+	</tr>
+	{% endfor %}	
+		
+
+	</tbody>
+  
+	</table>    
+	
+	<div class ='row'><h1>地址管理 + 发票管理</h1>
+	</div>
+	
+	
+	<div class ='row'><h1>下级： 贡献积分 表</h1>
+	</div>
+</div>
+
+</div>
+
+
+{% endblock %}

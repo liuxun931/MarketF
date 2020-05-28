@@ -1,0 +1,1939 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="Content-Type" content="text/html; charset=utf-8" />
+<meta name="pragma" content="no-cache"/>
+<meta name="cache-control" content="no-cache"/>
+<meta name="expires" content="0"/>
+<title>中国领先的O2O农业电商平台_谷登农批网武汉白沙洲批发市场</title>
+<meta name="keywords" content="农产品,农产品批发,农产品交易,农产品采购,农产品供应,谷登农批网武汉白沙洲批发市场"/>
+<meta name="description" content="谷登农批网武汉白沙洲批发市场，提供武汉白沙洲批发市场最全农产品及商户信息，及时发布武汉白沙洲批发市场最新农产品价格和供需资讯，并提供高效农产品物流服务，帮助解决农产品交易中资金问题—想赚钱，就上谷登农批网。"/>
+<meta name="renderer" content="webkit">
+<meta name="X-UA-Compatible" content="IE=7, IE=9, IE=10, IE=11, IE=12"/>
+<link rel="stylesheet" href="https://www.gdeng.cn/v1.0/css/global.css"/>
+<script src="https://www.gdeng.cn/v1.0/js/jquery-1.8.3.min.js"></script>
+<script src="https://www.gdeng.cn/v1.0/js/gdui.js"></script>
+<script type="text/javascript">
+var CONTEXT = "https://www.gdeng.cn/";
+var CONTEXT2 = "https://www.gdeng.cn/";
+</script>
+<link rel="stylesheet" href="https://www.gdeng.cn/v1.0/css/home.css">
+</head>
+<body>
+	<!--head star-->
+<!--head star-->
+<div class="head-wrap">
+	<div class="wrap-1170 header clearfix">
+		<div class="head-l">
+			<div class="sigout-box">
+				<span class="mr5">您好，欢迎来到谷登农批网！</span>
+				<a href="https://www.gdeng.cn/login/initLogin" class="head-link head-btn">登录</a>
+				<a style="display:none;" href="https://www.gdeng.cn/login/initRegister" class="head-link head-btn">注册</a>
+			</div>
+			<div class="sigin-box" style="display:none;">
+				您好，<a href="https://www.gdeng.cn/userCenter" class="sigin-name sigin-mobile" id="loginName"></a><a href="javascript:loginout();" class="ml10">退出</a>
+			</div>
+		</div>
+		<div class="head-r clearfix">
+			<a href="https://www.gdeng.cn/baishazhou.html" class="head-link2">首页</a>
+			<span class="head-spilt2"></span>
+			<a target="_blank" href="https://www.gdeng.cn/notice-list" class="head-link2">公告</a>
+			<span class="head-spilt2"></span>			
+			<a target="_blank" href="https://www.gdeng.cn/nst.shtml" class="head-link2 head-linkico">农速通</a>
+			<span class="head-spilt2"></span>			
+			<span class="h-app-subm">
+				<a target="_blank" href="https://www.gdeng.cn/nsy.shtml" class="head-link2 head-linkico">农商友</a>
+				<span class="h-app-subc">
+					<a target="_blank" href="https://www.gdeng.cn/nsy_nps.shtml" class="head-link2 head-linkico">农商友-农批商</a><br/>
+					<a target="_blank" href="https://www.gdeng.cn/nsy_gys.shtml" class="head-link2 head-linkico" style="position:relative;top:-10px; border-top:none; z-index:99;">农商友-供应商</a>
+				</span>
+			</span>
+			<span class="head-spilt2"></span>
+			<a target="_blank" href="https://www.gdeng.cn/userCenter" class="head-link2">我的谷登</a>
+			<span class="head-spilt2"></span>
+			<a target="_blank" href="https://www.gdeng.cn/service.html" class="head-link2">客服中心</a>
+			<span class="head-spilt2"></span>
+			<a target="_blank" href="https://www.gdeng.cn/help.html" class="head-link2">帮助中心</a>
+			<span class="head-spilt2"></span>
+			<div class="head-link2-tp">
+				<div class="head-left-pot">
+					<a href="javascript:void(0)" class="head-link2 head-link2-a1">网站导航</a>
+				</div>	
+				<div class="head-block-xz">
+					<ul>
+						<li><a href="https://www.gdeng.cn/logistics.html">物流服务</a></li>
+						<!-- <li><a href="https://www.gdeng.cn/finance.html">金融服务</a></li> -->
+						<div class="clear"></div>
+						<li><a href="https://www.gdeng.cn/baishazhou/market.html">白沙洲农批市场</a></li>
+						<li><a href="https://www.gdeng.cn/baishazhou/business.html">白沙洲农批商户</a></li>
+						<li><a href="https://www.gdeng.cn/baishazhou/test.html">白沙洲农产检测</a></li>
+						<li><a href="https://www.gdeng.cn/yulin/market.html">玉林农批市场</a></li>
+						<li><a href="https://www.gdeng.cn/yulin/business.html">玉林农批商户</a></li>
+						<li><a href="https://www.gdeng.cn/yulin/test.html">玉林农产检测</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$(function(){
+	$.ajax({
+		type:'POST',
+		url:CONTEXT+'login/isLogin',
+		dataType: 'json',
+		success:function(data){
+			if(data.mbdto){
+				if(data.mbdto.account!=null){
+					$(".sigout-box").hide();
+					$(".sigin-box").show();
+					$("#loginName").html(data.mbdto.mobile);
+				}
+			}
+			
+		}
+	});
+});
+
+function loginout() {
+	$.ajax({
+		type: 'POST',
+		url: CONTEXT+'login/loginOut' ,
+	    data: '' ,
+	    dataType: 'json' ,
+	    success: function(data) {
+	    	location.reload();
+	    } ,
+	    error: function(err) {
+	    	alert('系统维护中。。。');
+	    }
+	});
+}
+</script><script src="https://www.gdeng.cn/v1.0/js/home.js"></script>
+<div class="head-search">
+	<div class="wrap-1170 head-logo clearfix">
+		<div class="logo-wrap">
+			<a href="https://www.gdeng.cn/baishazhou.html"><img src="https://www.gdeng.cn/v1.0/images/logo.png" alt="谷登农批网-中国领先的O2O农业电商平台"></a>
+		</div>
+		<div class="h-location clearfix">
+			<div class="h-market-wrap">
+				<span class="h-market-name" id="marketName"></span><br/>
+				<a class="h-market-link js-showmap2" href="javascript:;">实景逛市场>></a>
+			</div>
+			<div class="h-market-l">
+				<div class="h-markett">
+					<span>切换市场</span><span class="h-arrow"></span>
+					<input type="hidden" id="marketId" value="1" />
+				</div>
+				<div class="h-market-subm">
+					<ul id="marketul">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="seach-box">
+			<form id="formHeadsearch" action="https://www.gdeng.cn/baishazhou/market.html" method="get">
+			<input type="hidden" value="" id="searchModel" name="searchModel"/>
+						<!-- searchModel用来标识搜索的类型，偶数为搜索产品，奇数为搜索商户 -->	
+			<div class="h-search">
+				<div class="h-search-twrap">
+					<div class="h-search-cat">					
+						<p class="h-search-catt"><a href="javascript:;" id="title1">产品</a><span class="h-arrow2"></span></p>
+						<ul class="h-search-catlist">
+							<li><a href="javascript:;" id="title2">商户</a></li>
+						</ul>	
+					</div>	
+				</div>
+<!-- 				<input name="act" id="search_act" value="discount" type="hidden">		 -->
+<input id="headSearch" name="keyWord" value="" type="text" class="headSearch" />
+				<input name="isBig" value="" type="hidden"/>
+				<input id="headSearch-btn" type="button" value="搜索" class="headSearch-btn" style="cursor:pointer;"/>
+			</div>
+			</form>
+			<!-- <div class="quick-search">
+				<a href="#">白菜</a><a href="#">玉米</a><a href="#">西兰花</a><a href="#">冬枣</a>
+			</div> -->
+		</div>
+	</div>
+</div>
+
+<script>
+$(function(){
+	getMarketList();
+	if ($("#searchModel").val()%2!=0) {
+		$("#title1").html("商户");
+		$("#title2").html("产品");
+		path="https://www.gdeng.cn/baishazhou/business.html";
+	}else{
+		$("#title1").text("产品");
+		$("#title2").text("商户");
+		path="https://www.gdeng.cn/baishazhou/market.html";
+	}
+	$('#formHeadsearch').attr("action", path);
+	
+	$("#headSearch-btn").click(function(){
+		if (!$.trim($("#headSearch").val())) {
+			return false;
+		}
+		var keyword=$("#headSearch").val();
+//  		keyword=encodeURI(keyword);
+		$("#headSearch").val($.trim(keyword));
+		//var path =https://www.gdeng.cn/+"product/list"; 
+		$('#formHeadsearch').submit();
+	});
+	
+	/****搜索框键盘回车按键提交查询****/
+	$("#headSearch").keypress(function(e) {
+		if (e.which == 13){
+			if (!$.trim($("#headSearch").val())) {
+				return false;
+			}
+			var keyword=$("#headSearch").val();
+// 			keyword=encodeURI(keyword);
+			$("#headSearch").val($.trim(keyword));
+			$('#formHeadsearch').submit();
+		}
+	})
+	
+	$("#title2").click(function(){
+		var path =""; 
+		var searchModel=$("#searchModel").val();
+		if(!searchModel){
+			searchModel=0;
+		}
+		
+		if ($("#searchModel").val()%2==0) {
+			$("#title2").html("产品");
+			$("#title1").html("商户");
+			path="https://www.gdeng.cn/baishazhou/business.html";
+			$('#formHeadsearch').attr("action", path);
+			while($('#formHeadsearch').attr("action").indexOf("business.html")==-1){
+				$('#formHeadsearch').attr("action", path);
+			}
+		}else{
+			$("#title2").html("商户");
+			$("#title1").html("产品");
+			path="https://www.gdeng.cn/baishazhou/market.html";
+			$('#formHeadsearch').attr("action", path);
+			while($('#formHeadsearch').attr("action").indexOf("market.html")==-1){
+				$('#formHeadsearch').attr("action", path);
+			}
+		}
+		$("#searchModel").val(parseInt(searchModel)+1);
+		$(".h-search-catlist").hide();
+		$('#formHeadsearch').attr("action", path);
+	});
+	$(".h-search-cat").mouseenter(function(){
+		$(".h-search-catlist").show();
+	});
+ 	$(".h-arrow2").click(function(){
+ 		$(".h-search-catlist").toggle();
+ 	});
+	$(".h-search-cat").mouseleave(function(){
+		$(".h-search-catlist").hide();
+	}); 
+});
+
+function changeMarket(marketId){
+	$.cookie('marketId',marketId, {expires:7,path:'/'});
+	var hreftemp = window.location.href;
+	if(hreftemp == CONTEXT2 || hreftemp.indexOf("baishazhou.html") > 0 || hreftemp.indexOf("yulin.html") > 0){
+		if("1" == marketId){
+			window.location.href = CONTEXT2 + "baishazhou.html";
+		}else if("2" == marketId){
+			window.location.href = CONTEXT2 + "yulin.html";
+		}
+	}else if(hreftemp.indexOf("zhuanti/tuiguang_wuhan") > 0 || hreftemp.indexOf("zhuanti/tuiguang_yulin") > 0){
+		if("1" == marketId){
+			window.location.href = CONTEXT2 + "zhuanti/tuiguang_wuhan";
+		}else if("2" == marketId){
+			window.location.href = CONTEXT2 + "zhuanti/tuiguang_yulin";
+		}
+	}else{
+		window.location.href = window.location.href;
+	}
+}
+
+function getMarketList(){
+	$.ajax({
+		type:'POST',
+		url:CONTEXT+'index/getMarketList',
+		dataType: 'json',
+		async: false,
+		error:function(data){
+			//alert(data);
+		},
+		success:function(data){
+			if(null != data){
+				var addstr = "";
+		    	if(data.length > 0){
+		    		var indexmarketid = $("#marketId").val();
+		    		if(null == indexmarketid || '' == indexmarketid){
+		    			indexmarketid = $.cookie('marketId');
+		    		}
+		    		
+		    		if(indexmarketid == "1"){
+		    			$(".js-showmap2").html("实景逛市场>>");
+		    		}else{
+		    			$(".js-showmap2").html("");
+		    		}
+		    		
+		    		for(var i = 0; i < data.length; i ++){
+			    		var marketId = data[i].id;
+			    		var marketName = data[i].marketName;
+			    		//var strtemp = "<li><a href='javascript:changeMarket("+marketId+");'>"+marketName+"</a></li>";
+						//addstr = addstr + strtemp;
+						if(marketId == indexmarketid){
+							$("#marketName").html(marketName);
+						}
+			    	}
+		    	}
+		    	addstr = "<li><a href='javascript:changeMarket(1);'>武汉白沙洲批发市场</a></li>" + 
+		    	"<li><a href='javascript:changeMarket(2);'>广西玉林批发市场</a></li>";
+
+
+		    	var hidetemp ="<li class='entered'>已入驻农商友APP </li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>黄石宏进农副产品物流中心</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>开封宏进农副产品物流中心</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>黄冈宏港农副产品批发市场</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>中国-东盟（钦州）市场</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>濮阳宏进农副产品物流中心</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>淮安宏进农副产品物流中心</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>徐州农副产品市场</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>洛阳宏进农副产品物流中心</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>盘锦宏进农副产品商贸城</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>南阳中商农产品批发市场</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>恩施华硒生态农产品批发市场</a></li>"+
+		    	"<li><a href='http://www.gdeng.cn/nsy.shtml'>十堰市大臣农产品批发市场</a></li>"
+				;
+
+				var notEntered="<li class='entered'>入驻中 </li>"+
+				"<li><a href='javascript:;' class='not-inserver'>抚州宏进农副产品物流中心</a></li>"+
+				"<li><a href='javascript:;' class='not-inserver'>郴州宏进农副产品物流中心</a></li>"+
+				"<li ><a href='"+CONTEXT+"marketMap' target='_blank' class='h-mar-linkall'>全国农批市场》</a></li>";
+	    		addstr = addstr + hidetemp + notEntered;
+		    	$("#marketul").html(addstr);
+			}else{
+				$("#marketul").html("");
+			}
+		}
+	});
+}
+</script>
+<script>
+	$(".js-showmap2").click(function(){			
+		layer.open({
+			type: 2,
+		    title: "湖北武汉白沙洲农批市场", //显示标题
+		    skin: 'layui-layer-rim', //加上边框
+	    	content: [CONTEXT + 'jjMap'],
+	    	cusClass:'comDialog',
+		    area:["900px","607px"],
+		    cancel: function(index){
+		    	layer.close(index);
+
+		    }
+		})
+	});
+</script>
+
+<!--nav start-->
+	<div class="nav">
+		<div class="nav_inside clearfix">
+			<div class="nav_title"><span>全部分类</span>
+				<div class="nav_title_show"></div>
+			</div>
+			<!-- 主导航栏 -->
+			<div class="main_menu">
+			<!-- // 	String marketId = CookieUtil.getValue("marketId"); -->
+<!-- // 	marketId=StringUtils.isEmpty(marketId) ? "1" : marketId; -->
+<!-- // 	request.setAttribute("marketId", marketId); -->
+<!-- 该div节点有些页面不同，因此不共用 -->
+<!-- <div class="main_menu"> -->
+	<ul class="main_menu_list c">
+		<li class="main_menu_item">
+			<a id="menuIndex" href="https://www.gdeng.cn/baishazhou.html" class="main_menu_item_link" title="首页">首页</a>
+		</li>
+		<li class="main_menu_item">
+			<a id="menuProduct" href="https://www.gdeng.cn/baishazhou/market.html" class="main_menu_item_link " title="农批市场">农批市场</a>	
+		</li>	
+		<li class="main_menu_item">
+			<a id="menuBusiness" href="https://www.gdeng.cn/baishazhou/business.html" class="main_menu_item_link " title="农批商户">农批商户</a>	
+		</li>	
+		<!-- <li class="main_menu_item">
+			<a id="menuMarketPrice" href="https://www.gdeng.cn/price/index" class="main_menu_item_link " title="农市行情">农市行情</a>	
+		</li> -->
+		<li class="main_menu_item" style="position:relative;">
+			<a id="menuteseguan" href="https://www.gdeng.cn/zhuanti/goldMedal/" class="main_menu_item_link " title="金牌供应商">金牌供应商</a>
+			<span style="position:absolute; top:5px; right:0px; padding:3px 5px; background:red; color:#fff; font-size:8px; -webkit-transform:scale(0.6); border-radius: 3px;">HOT</span>
+			<span style="position:absolute; top:12px; right:26px; width: 0px; height: 0px; border-bottom: 3px solid transparent; border-top: 3px solid transparent; border-right: 4px solid red; font-size: 0px;line-height: 0px;"></span>	
+		</li>
+		<li class="main_menu_item" style="position:relative;">
+			<a id="menuteseguan" href="https://www.gdeng.cn/zhuanti/teseguan/" class="main_menu_item_link " title="地方特色馆">地方特色馆</a>
+			<span style="position:absolute; top:5px; right:0px; padding:3px 5px; background:red; color:#fff; font-size:8px; -webkit-transform:scale(0.6); border-radius: 3px;">HOT</span>
+			<span style="position:absolute; top:12px; right:26px; width: 0px; height: 0px; border-bottom: 3px solid transparent; border-top: 3px solid transparent; border-right: 4px solid red; font-size: 0px;line-height: 0px;"></span>	
+		</li>		
+		<li class="main_menu_item">
+			<a id="menuTransportation" href="https://www.gdeng.cn/logistics.html" class="main_menu_item_link " title="物流服务">物流服务</a>	
+		</li>
+		<!-- <li class="main_menu_item">
+			<a id="aboutus_financial" href="https://www.gdeng.cn/finance.html" class="main_menu_item_link " title="金融服务">金融服务</a>	
+		</li> -->
+		<li class="main_menu_item">
+			<a id="menuDetect" href="https://www.gdeng.cn/test.html" class="main_menu_item_link " title="食品安全">食品安全</a>	
+		</li>
+	</ul>
+<script>
+$(function(){
+	var url=window.location.href;
+	$(".main_menu_item_link").each(function(){
+		if(url.indexOf("finance")!=-1){
+			$("#aboutus_financial").css("color","#068139");
+			$("#aboutus_financial").css("font-weight","600");
+			return false;
+		}else if(url.indexOf("marketlink")!=-1){
+			$("#menuIndex").css("color","#068139");
+			$("#menuIndex").css("font-weight","600");
+			return false;
+		}else if(url.indexOf("market")!=-1 || url.indexOf("product")!=-1){
+			$("#menuProduct").css("color","#068139");
+			$("#menuProduct").css("font-weight","600");
+			return false;
+		}else if(url.indexOf("business")!=-1){
+			$("#menuBusiness").css("color","#068139");
+			$("#menuBusiness").css("font-weight","600");
+			return false;
+		}else if(url.indexOf("price")!=-1){
+			$("#menuMarketPrice").css("color","#068139");
+			$("#menuMarketPrice").css("font-weight","600");
+			return false;
+		}else if(url.indexOf("test")!=-1){
+			$("#menuDetect").css("color","#068139");
+			$("#menuDetect").css("font-weight","600");
+			return false;
+		}else if(url.indexOf("logistics")!=-1){
+			$("#menuTransportation").css("color","#068139");
+			$("#menuTransportation").css("font-weight","600");
+			return false;
+		}else if(url.indexOf("teseguan")!=-1){
+			$("#menuteseguan").css("color","#068139");
+			$("#menuteseguan").css("font-weight","600");
+			return false;
+		}else{
+			$("#menuIndex").css("color","#068139");
+			$("#menuIndex").css("font-weight","600");
+			return false;
+		}
+	});
+});
+</script>
+<!-- </div> --></div>
+			<!-- 二级分类 -->
+			<!-- 二级分类 -->
+<div class="header_sidenav" style="overflow: visible;">
+	<ul class="header_sidenav_list">
+		<li class="header_sidenav_item">
+				<div class="header_sidenav_item_info">
+					<strong class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w1.png" width="25" height="25" /></span>水产</strong>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/45.html" title="鱼">鱼</a></span>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/435.html" title="蟹">蟹</a></span>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/437.html" title="虾">虾</a></span>
+					<p class="header_sidenav_item_other">
+						<a href="https://www.gdeng.cn/baishazhou/market/56.html" title="鲤鱼">鲤鱼</a>
+						<span class="header-sidenav-spilt">|</span>
+							<a href="https://www.gdeng.cn/baishazhou/market/57.html" title="鲫鱼">鲫鱼</a>
+						<span class="header-sidenav-spilt">|</span>
+							<a href="https://www.gdeng.cn/baishazhou/market/59.html" title="草鱼">草鱼</a>
+						</p>
+				</div>
+	            <div class="header_sidenav_cnt clearfix">
+	            	<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/45.html" title="鱼">鱼</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/56.html" title="鲤鱼">鲤鱼</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/57.html" title="鲫鱼">鲫鱼</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/59.html" title="草鱼">草鱼</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/60.html" title="白鲢">白鲢</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/439.html" title="青鱼">青鱼</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/440.html" title="刁子鱼">刁子鱼</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/441.html" title="花鲢">花鲢</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/442.html" title="剑骨鱼">剑骨鱼</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/508.html" title="黄鳝">黄鳝</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/61.html" title="其它鱼类">其它鱼类</a>
+								</div>
+		            	</div>
+					<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/435.html" title="蟹">蟹</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/436.html" title="中华绒螯蟹">中华绒螯蟹</a>
+								</div>
+		            	</div>
+					<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/437.html" title="虾">虾</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/438.html" title="河虾">河虾</a>
+								</div>
+		            	</div>
+					<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/443.html" title="其它水产">其它水产</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/444.html" title="甲鱼">甲鱼</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/501.html" title="龟">龟</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/512.html" title="其它">其它</a>
+								</div>
+		            	</div>
+					</div>
+			</li>
+		<li class="header_sidenav_item">
+				<div class="header_sidenav_item_info">
+					<strong class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w2.png" width="25" height="25" /></span>果蔬</strong>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/63.html" title="四季果蔬">四季果蔬</a></span>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/64.html" title="食用菌">食用菌</a></span>
+					<p class="header_sidenav_item_other">
+						<a href="https://www.gdeng.cn/baishazhou/market/65.html" title="韭菜">韭菜</a>
+						<span class="header-sidenav-spilt">|</span>
+							<a href="https://www.gdeng.cn/baishazhou/market/66.html" title="白菜">白菜</a>
+						<span class="header-sidenav-spilt">|</span>
+							<a href="https://www.gdeng.cn/baishazhou/market/67.html" title="黄瓜">黄瓜</a>
+						</p>
+				</div>
+	            <div class="header_sidenav_cnt clearfix">
+	            	<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/63.html" title="四季果蔬">四季果蔬</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/65.html" title="韭菜">韭菜</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/66.html" title="白菜">白菜</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/67.html" title="黄瓜">黄瓜</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/509.html" title="水果">水果</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/76.html" title="其它果蔬">其它果蔬</a>
+								</div>
+		            	</div>
+					<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/64.html" title="食用菌">食用菌</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/500.html" title="香菇">香菇</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/88.html" title="其它菌类">其它菌类</a>
+								</div>
+		            	</div>
+					</div>
+			</li>
+		<li class="header_sidenav_item">
+				<div class="header_sidenav_item_info">
+					<strong class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w3.png" width="25" height="25" /></span>干调</strong>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/92.html" title="干货">干货</a></span>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/93.html" title="调料">调料</a></span>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/431.html" title="日杂">日杂</a></span>
+					<p class="header_sidenav_item_other">
+						<a href="https://www.gdeng.cn/baishazhou/market/449.html" title="豆制品">豆制品</a>
+						<span class="header-sidenav-spilt">|</span>
+							<a href="https://www.gdeng.cn/baishazhou/market/98.html" title="干果">干果</a>
+						<span class="header-sidenav-spilt">|</span>
+							<a href="https://www.gdeng.cn/baishazhou/market/95.html" title="干菌">干菌</a>
+						</p>
+				</div>
+	            <div class="header_sidenav_cnt clearfix">
+	            	<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/92.html" title="干货">干货</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/449.html" title="豆制品">豆制品</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/98.html" title="干果">干果</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/95.html" title="干菌">干菌</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/96.html" title="传统中草药">传统中草药</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/100.html" title="其它干货">其它干货</a>
+								</div>
+		            	</div>
+					<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/93.html" title="调料">调料</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/102.html" title="调味品">调味品</a>
+								</div>
+		            	</div>
+					<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/431.html" title="日杂">日杂</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/450.html" title="饼干/膨化">饼干/膨化</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/432.html" title="其它日杂">其它日杂</a>
+								</div>
+		            	</div>
+					</div>
+			</li>
+		<li class="header_sidenav_item">
+				<div class="header_sidenav_item_info">
+					<strong class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w4.png" width="25" height="25" /></span>禽蛋</strong>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/105.html" title="鸡蛋">鸡蛋</a></span>
+					<span class="side-nav-txt"><a href="https://www.gdeng.cn/baishazhou/market/451.html" title="其它禽蛋">其它禽蛋</a></span>
+					<p class="header_sidenav_item_other">
+						<a href="https://www.gdeng.cn/baishazhou/market/112.html" title="鲜鸡蛋">鲜鸡蛋</a>
+						<span class="header-sidenav-spilt">|</span>
+							<a href="https://www.gdeng.cn/baishazhou/market/502.html" title="咸蛋">咸蛋</a>
+						<span class="header-sidenav-spilt">|</span>
+							<a href="https://www.gdeng.cn/baishazhou/market/452.html" title="其它">其它</a>
+						</p>
+				</div>
+	            <div class="header_sidenav_cnt clearfix">
+	            	<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/105.html" title="鸡蛋">鸡蛋</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/112.html" title="鲜鸡蛋">鲜鸡蛋</a>
+								</div>
+		            	</div>
+					<div class="header-sidenav-list clearfix">
+		            		<h3 class="side-nav-t-lev3"><a href="https://www.gdeng.cn/baishazhou/market/451.html" title="其它禽蛋">其它禽蛋</a></h3>
+		            		<div class="header-sidenav-link">
+		            			<a href="https://www.gdeng.cn/baishazhou/market/502.html" title="咸蛋">咸蛋</a>
+								<span class="header-sidenav-spilt">|</span>
+									<a href="https://www.gdeng.cn/baishazhou/market/452.html" title="其它">其它</a>
+								</div>
+		            	</div>
+					</div>
+			</li>
+
+		
+		</ul>
+</div>
+<!-- END: 不一样的保险 --></div>
+	</div>
+	<!--head end-->
+	<!--slide start-->
+	<div id="nav_home"></div>
+	<div class="i-slide-wrap mt15">
+		<div class="wrap-1170 i-slide-box clearfix">
+			<div id="" class="ty_picScroll mgauto index-banner">		
+				<div class="ty_tabInfo">
+					<ul>
+						<li class="ty_pic">
+								<a href="http://www.gdeng.cn/zhuanti/teseguan" target="_blank">
+											<img src="https://img.gdeng.cn/2016/7/22/2e39825ba11b479d9acaaab224f1c372.jpg" width="672" height="401" >
+										</a>
+									</li>
+						</ul>
+				</div>
+			</div>
+			<!--公告 start-->
+			<div class="notice-tool">
+				<div class="totalDet">
+					<div class="totalNum">
+						<div class="totalNumT"><span class="totalNumTit">市场动态</span><span class="i-nowtime"></span></div>
+						<div class="totalNumlist">
+							<p>总产品数<span class="numImportant"><span class="totalProduct">116061</span>件</span></p>
+							<!-- <p>昨日交易额<span class="numImportant">¥<span class="yesterdayAmounts">6341.57万</span></span></p>
+							<p>今日交易额<span class="numImportant">¥<span class="todayAmounts">6420.57万</span></span></p> -->
+						</div>
+					</div>	
+					<div class="i-scroll-wrap ">
+						<ul class="i-scroll-name clearfix">
+							<li class="i-scrn-item1" style="color: #069139">品名</li>
+							<li class="i-scrn-item2" style="color: #069139">高价</li>
+							<li class="i-scrn-item3" style="color: #069139">低价</li>
+							<li class="i-scrn-item4" style="color: #069139">平均价</li>
+							<li class="i-scrn-item5" style="color: #069139">涨跌</li>
+						</ul>
+						<div class="i-scroll-box">
+							<ul class="i-scroll-list clearfix">
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											青鱼  条重≥2000</div>
+										<div class="i-scrn-item i-scrn-item2">￥13.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥12.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥12.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											青鱼  条重＜2000</div>
+										<div class="i-scrn-item i-scrn-item2">￥12.6</div>
+										<div class="i-scrn-item i-scrn-item3">￥12.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥12.3</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											青鱼  4000＜条重≤5000</div>
+										<div class="i-scrn-item i-scrn-item2">￥15.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥14.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥14.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											青鱼  2500＜条重≤3500</div>
+										<div class="i-scrn-item i-scrn-item2">￥14.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥13.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥13.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲶鱼  条重≥500</div>
+										<div class="i-scrn-item i-scrn-item2">￥11.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥10.5</div>
+										<div class="i-scrn-item i-scrn-item4">￥10.75</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲶鱼  250≤条重＜500</div>
+										<div class="i-scrn-item i-scrn-item2">￥10.5</div>
+										<div class="i-scrn-item i-scrn-item3">￥10.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥10.25</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲶鱼  150≤条重＜250</div>
+										<div class="i-scrn-item i-scrn-item2">￥10.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥9.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥9.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											泥鳅  统价</div>
+										<div class="i-scrn-item i-scrn-item2">￥32.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥19.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥25.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											南方大口鲶  条重≥1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥15.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥14.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥14.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											南方大口鲶  条重＜1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥15.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥14.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥14.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲢子鱼  条重≥1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥5.8</div>
+										<div class="i-scrn-item i-scrn-item3">￥5.2</div>
+										<div class="i-scrn-item i-scrn-item4">￥5.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲢子鱼  500≤条重＜1000</div>
+										<div class="i-scrn-item i-scrn-item2">￥5.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥4.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥4.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲢子鱼  1000≤条重＜1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥5.4</div>
+										<div class="i-scrn-item i-scrn-item3">￥4.8</div>
+										<div class="i-scrn-item i-scrn-item4">￥5.1</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲤鱼  条重≥1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥8.4</div>
+										<div class="i-scrn-item i-scrn-item3">￥7.8</div>
+										<div class="i-scrn-item i-scrn-item4">￥8.1</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲤鱼  500≤条重＜1000</div>
+										<div class="i-scrn-item i-scrn-item2">￥5.8</div>
+										<div class="i-scrn-item i-scrn-item3">￥5.2</div>
+										<div class="i-scrn-item i-scrn-item4">￥5.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲤鱼  1000≤条重＜1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥8.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥7.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥7.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											甲鱼(暂养)  统价</div>
+										<div class="i-scrn-item i-scrn-item2">￥70.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥60.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥65.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											甲鱼(野生)  中</div>
+										<div class="i-scrn-item i-scrn-item2">￥200.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥180.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥190.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											甲鱼(野生)  小</div>
+										<div class="i-scrn-item i-scrn-item2">￥120.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥100.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥110.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											甲鱼(野生)  大</div>
+										<div class="i-scrn-item i-scrn-item2">￥240.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥220.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥230.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											甲鱼(温室）  统价</div>
+										<div class="i-scrn-item i-scrn-item2">￥33.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥31.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥32.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲫鱼  条重≥500</div>
+										<div class="i-scrn-item i-scrn-item2">￥18.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥17.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥17.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲫鱼  条重＜100</div>
+										<div class="i-scrn-item i-scrn-item2">￥8.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥7.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥7.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲫鱼  250≤条重＜500</div>
+										<div class="i-scrn-item i-scrn-item2">￥16.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥15.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥15.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鲫鱼  100≤条重＜250</div>
+										<div class="i-scrn-item i-scrn-item2">￥11.6</div>
+										<div class="i-scrn-item i-scrn-item3">￥10.8</div>
+										<div class="i-scrn-item i-scrn-item4">￥11.2</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											黄鳝(鳝鱼)  条重≥100</div>
+										<div class="i-scrn-item i-scrn-item2">￥58.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥56.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥57.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											黄鳝(鳝鱼)  条重＜100</div>
+										<div class="i-scrn-item i-scrn-item2">￥60.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥58.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥59.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											黄颡鱼  条重≥150</div>
+										<div class="i-scrn-item i-scrn-item2">￥26.5</div>
+										<div class="i-scrn-item i-scrn-item3">￥25.5</div>
+										<div class="i-scrn-item i-scrn-item4">￥26.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											黄颡鱼  条重≤50</div>
+										<div class="i-scrn-item i-scrn-item2">￥18.5</div>
+										<div class="i-scrn-item i-scrn-item3">￥17.5</div>
+										<div class="i-scrn-item i-scrn-item4">￥18.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											黄颡鱼  50≤条重＜150</div>
+										<div class="i-scrn-item i-scrn-item2">￥22.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥20.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥21.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											花鲢  条重≥1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥11.2</div>
+										<div class="i-scrn-item i-scrn-item3">￥10.6</div>
+										<div class="i-scrn-item i-scrn-item4">￥10.9</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											花鲢  500≤条重＜1000</div>
+										<div class="i-scrn-item i-scrn-item2">￥8.2</div>
+										<div class="i-scrn-item i-scrn-item3">￥7.6</div>
+										<div class="i-scrn-item i-scrn-item4">￥7.9</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											花鲢  2000≤条重＜2500</div>
+										<div class="i-scrn-item i-scrn-item2">￥12.8</div>
+										<div class="i-scrn-item i-scrn-item3">￥12.2</div>
+										<div class="i-scrn-item i-scrn-item4">￥12.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											花鲢  1000≤条重＜1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥10.4</div>
+										<div class="i-scrn-item i-scrn-item3">￥9.8</div>
+										<div class="i-scrn-item i-scrn-item4">￥10.1</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											黑鱼(乌鳢）  条重≥750</div>
+										<div class="i-scrn-item i-scrn-item2">￥18.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥17.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥17.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											黑鱼(乌鳢）  条重＜750</div>
+										<div class="i-scrn-item i-scrn-item2">￥12.5</div>
+										<div class="i-scrn-item i-scrn-item3">￥11.5</div>
+										<div class="i-scrn-item i-scrn-item4">￥12.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鳜鱼(桂鱼)  条重≥750</div>
+										<div class="i-scrn-item i-scrn-item2">￥50.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥48.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥49.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鳜鱼(桂鱼)  500≤条重＜750</div>
+										<div class="i-scrn-item i-scrn-item2">￥56.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥54.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥55.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鳜鱼(桂鱼)  250≤条重＜500</div>
+										<div class="i-scrn-item i-scrn-item2">￥50.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥48.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥49.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											草鱼  条重≥1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥13.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥12.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥12.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											草鱼  500≤条重＜1000</div>
+										<div class="i-scrn-item i-scrn-item2">￥11.8</div>
+										<div class="i-scrn-item i-scrn-item3">￥11.2</div>
+										<div class="i-scrn-item i-scrn-item4">￥11.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											草鱼  3500以上</div>
+										<div class="i-scrn-item i-scrn-item2">￥14.2</div>
+										<div class="i-scrn-item i-scrn-item3">￥13.6</div>
+										<div class="i-scrn-item i-scrn-item4">￥13.9</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											草鱼  1000≤条重＜1500</div>
+										<div class="i-scrn-item i-scrn-item2">￥12.8</div>
+										<div class="i-scrn-item i-scrn-item3">￥12.2</div>
+										<div class="i-scrn-item i-scrn-item4">￥12.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鳊鱼  条重≥500</div>
+										<div class="i-scrn-item i-scrn-item2">￥13.6</div>
+										<div class="i-scrn-item i-scrn-item3">￥13.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥13.3</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											鳊鱼  条重＜500</div>
+										<div class="i-scrn-item i-scrn-item2">￥12.8</div>
+										<div class="i-scrn-item i-scrn-item3">￥12.2</div>
+										<div class="i-scrn-item i-scrn-item4">￥12.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											白鱼  500＜条重≤1000</div>
+										<div class="i-scrn-item i-scrn-item2">￥23.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥21.0</div>
+										<div class="i-scrn-item i-scrn-item4">￥22.0</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											白鱼  200＜条重≤500</div>
+										<div class="i-scrn-item i-scrn-item2">￥17.5</div>
+										<div class="i-scrn-item i-scrn-item3">￥15.5</div>
+										<div class="i-scrn-item i-scrn-item4">￥16.5</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											芋头</div>
+										<div class="i-scrn-item i-scrn-item2">￥4.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥1.8</div>
+										<div class="i-scrn-item i-scrn-item4">￥2.9</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-down"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											玉米棒</div>
+										<div class="i-scrn-item i-scrn-item2">￥4.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥3.6</div>
+										<div class="i-scrn-item i-scrn-item4">￥3.8</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								<li class="clearfix">
+										<div class="i-scrn-item i-scrn-item1">
+											油麦菜</div>
+										<div class="i-scrn-item i-scrn-item2">￥2.0</div>
+										<div class="i-scrn-item i-scrn-item3">￥1.4</div>
+										<div class="i-scrn-item i-scrn-item4">￥1.7</div>
+										<div class="i-scrn-item i-scrn-item5">
+											<span class="dows-ico-up"></span>
+												</div>
+									</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--公告 end-->
+		</div>
+	</div>
+	<!--slide end-->
+	<!--main start-->
+	<div class="wrap-1170 clearfix">
+		<!--推荐 start-->
+		<div class="i-recommend-list clearfix">
+			<ul>
+				<li>
+						<img src="https://img.gdeng.cn/2016/9/28/e2b12820e6394e6194efaebedf127f1b.png" width="232" height="98" >
+							</li>
+				<li>
+						<img src="https://img.gdeng.cn/2016/9/28/0a8e075dd14c4b5689fd15ddd1cd6677.png" width="232" height="98" >
+							</li>
+				</ul>
+		</div>
+		<!--推荐 end-->
+		<!--类目 start-->
+		<div class="clearfix i-com-cat-wrap">
+			<!--冻品区-->
+			<div class="i-com-cat-box com-cat-bdt1"><!--  -->
+					<div class="i-com-tbox clearfix">
+						<h2 class="i-com-t"><span class="i-com-t-ico"><img src="https://img.gdeng.cn/cate/whbsz/w1.png" width="25" height="25" /></span>水产区</h2>
+						<a href="https://www.gdeng.cn/baishazhou/market/12.html" target="_blank" title="更多" class="i-com-more">更多>></a>
+					</div>
+					<div class="i-com-cbox clearfix">
+						<div class="i-com-catl">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/45.html" target="_blank" title="鱼">鱼</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/435.html" target="_blank" title="蟹">蟹</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/437.html" target="_blank" title="虾">虾</a>
+								</div>
+							<a href="http://www.gdeng.cn/product/list/12"><img src="https://img.gdeng.cn/2015/11/13/f6524691152046519af1b8ff9ac4f807.jpg" target="_blank" width="179" height="192" ></a>
+							</div>
+						<div class="i-com-catr clearfix">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/56.html" title="鲤鱼">鲤鱼</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/57.html" title="鲫鱼">鲫鱼</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/59.html" title="草鱼">草鱼</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/60.html" title="白鲢">白鲢</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/439.html" title="青鱼">青鱼</a>
+								<span class="i-com-catrmw">
+										<a href="https://www.gdeng.cn/baishazhou/market/12.html" title="更多" class="i-com-catrmore">>></a>
+										<div class="i-com-catmlist">
+											<a href="https://www.gdeng.cn/baishazhou/market/440.html" title="刁子鱼">刁子鱼</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/441.html" title="花鲢">花鲢</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/442.html" title="剑骨鱼">剑骨鱼</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/508.html" title="黄鳝">黄鳝</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/61.html" title="其它鱼类">其它鱼类</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/436.html" title="中华绒螯蟹">中华绒螯蟹</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/438.html" title="河虾">河虾</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/444.html" title="甲鱼">甲鱼</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/501.html" title="龟">龟</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/512.html" title="其它">其它</a>
+												<span class="header-sidenav-spilt">|</span>
+											</div>
+									</span>
+								</div>
+							<ul class="i-com-neslist clearfix">
+								<li><span class="i-com-time">10-27</span><a href="https://www.gdeng.cn/market/108283.html" target="_blank" title="鲤鱼">
+										鲤鱼</a><span class="i-com-price">¥2.00</span></li>
+								<li><span class="i-com-time">10-20</span><a href="https://www.gdeng.cn/market/83968.html" target="_blank" title="原生态稻田放养鱼">
+										原生态稻田...
+											</a><span class="i-com-price">¥56.00</span></li>
+								<li><span class="i-com-time">09-27</span><a href="https://www.gdeng.cn/market/80402.html" target="_blank" title="鲤鱼">
+										鲤鱼</a><span class="i-com-price">¥5.00</span></li>
+								<li><span class="i-com-time">10-31</span><a href="https://www.gdeng.cn/market/108415.html" target="_blank" title="鲫鱼">
+										鲫鱼</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">12-28</span><a href="https://www.gdeng.cn/market/94372.html" target="_blank" title="鲫鱼">
+										鲫鱼</a><span class="i-com-price">¥13.00</span></li>
+								<li><span class="i-com-time">10-17</span><a href="https://www.gdeng.cn/market/82980.html" target="_blank" title="鲫鱼">
+										鲫鱼</a><span class="i-com-price">¥10.00</span></li>
+								</ul>
+							<ul class="loc-map-list clearfix">
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3236.html">
+										王浩渔行</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3238.html">
+										李卫国渔行</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3239.html">
+										肖新洲渔行</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3241.html">
+										蒋平潮渔行</a></li>
+								</ul>
+						</div>	
+					</div>
+				</div>
+			<div class="i-com-cat-box com-cat-bdt2"><!--  -->
+					<div class="i-com-tbox clearfix">
+						<h2 class="i-com-t"><span class="i-com-t-ico"><img src="https://img.gdeng.cn/cate/whbsz/w2.png" width="25" height="25" /></span>果蔬区</h2>
+						<a href="https://www.gdeng.cn/baishazhou/market/35.html" target="_blank" title="更多" class="i-com-more">更多>></a>
+					</div>
+					<div class="i-com-cbox clearfix">
+						<div class="i-com-catl">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/63.html" target="_blank" title="四季果蔬">四季果蔬</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/64.html" target="_blank" title="食用菌">食用菌</a>
+								</div>
+							<a href="http://www.gdeng.cn/product/list/35"><img src="https://img.gdeng.cn/2015/11/9/d545ce18b6c644fbbf210fba1f5c36f8.jpg" target="_blank" width="179" height="192" ></a>
+							</div>
+						<div class="i-com-catr clearfix">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/65.html" title="韭菜">韭菜</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/66.html" title="白菜">白菜</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/67.html" title="黄瓜">黄瓜</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/509.html" title="水果">水果</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/76.html" title="其它果蔬">其它果蔬</a>
+								<span class="i-com-catrmw">
+										<a href="https://www.gdeng.cn/baishazhou/market/35.html" title="更多" class="i-com-catrmore">>></a>
+										<div class="i-com-catmlist">
+											<a href="https://www.gdeng.cn/baishazhou/market/500.html" title="香菇">香菇</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/88.html" title="其它菌类">其它菌类</a>
+												<span class="header-sidenav-spilt">|</span>
+											</div>
+									</span>
+								</div>
+							<ul class="i-com-neslist clearfix">
+								<li><span class="i-com-time">11-01</span><a href="https://www.gdeng.cn/market/108533.html" target="_blank" title="韭菜">
+										韭菜</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">05-20</span><a href="https://www.gdeng.cn/market/59476.html" target="_blank" title="秋葵">
+										秋葵</a><span class="i-com-price">¥2.50</span></li>
+								<li><span class="i-com-time">03-14</span><a href="https://www.gdeng.cn/market/46458.html" target="_blank" title="韭菜">
+										韭菜</a><span class="i-com-price">¥3.50</span></li>
+								<li><span class="i-com-time">02-19</span><a href="https://www.gdeng.cn/market/99340.html" target="_blank" title="青硕冬白菜">
+										青硕冬白菜</a><span class="i-com-price">面议</span></li>
+								<li><span class="i-com-time">02-16</span><a href="https://www.gdeng.cn/market/98979.html" target="_blank" title="福建大白菜">
+										福建大白菜</a><span class="i-com-price">面议</span></li>
+								<li><span class="i-com-time">12-15</span><a href="https://www.gdeng.cn/market/92213.html" target="_blank" title="青杂三号">
+										青杂三号</a><span class="i-com-price">¥840.00</span></li>
+								</ul>
+							<ul class="loc-map-list clearfix">
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/317.html">
+										汇禾商行</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/460.html">
+										宏利商行</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/470.html">
+										佳利商行</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/1393.html">
+										佳合商行</a></li>
+								</ul>
+						</div>	
+					</div>
+				</div>
+			<div class="i-com-cat-box com-cat-bdt3"><!--  -->
+					<div class="i-com-tbox clearfix">
+						<h2 class="i-com-t"><span class="i-com-t-ico"><img src="https://img.gdeng.cn/cate/whbsz/w3.png" width="25" height="25" /></span>干调区</h2>
+						<a href="https://www.gdeng.cn/baishazhou/market/36.html" target="_blank" title="更多" class="i-com-more">更多>></a>
+					</div>
+					<div class="i-com-cbox clearfix">
+						<div class="i-com-catl">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/92.html" target="_blank" title="干货">干货</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/93.html" target="_blank" title="调料">调料</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/431.html" target="_blank" title="日杂">日杂</a>
+								</div>
+							<a href="http://www.gdeng.cn/product/list/36"><img src="https://img.gdeng.cn/2015/11/9/10e72dc1aad048faa3b8320bcfe57cce.jpg" target="_blank" width="179" height="192" ></a>
+							</div>
+						<div class="i-com-catr clearfix">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/449.html" title="豆制品">豆制品</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/98.html" title="干果">干果</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/95.html" title="干菌">干菌</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/96.html" title="传统中草药">传统中草药</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/100.html" title="其它干货">其它干货</a>
+								<span class="i-com-catrmw">
+										<a href="https://www.gdeng.cn/baishazhou/market/36.html" title="更多" class="i-com-catrmore">>></a>
+										<div class="i-com-catmlist">
+											<a href="https://www.gdeng.cn/baishazhou/market/102.html" title="调味品">调味品</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/450.html" title="饼干/膨化">饼干/膨化</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/432.html" title="其它日杂">其它日杂</a>
+												<span class="header-sidenav-spilt">|</span>
+											</div>
+									</span>
+								</div>
+							<ul class="i-com-neslist clearfix">
+								<li><span class="i-com-time">10-31</span><a href="https://www.gdeng.cn/market/108410.html" target="_blank" title="凉粉">
+										凉粉</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">10-31</span><a href="https://www.gdeng.cn/market/108409.html" target="_blank" title="柴火豆腐">
+										柴火豆腐</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">10-31</span><a href="https://www.gdeng.cn/market/108408.html" target="_blank" title="虎皮豆干">
+										虎皮豆干</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">11-02</span><a href="https://www.gdeng.cn/market/108678.html" target="_blank" title="瓜子">
+										瓜子</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">01-13</span><a href="https://www.gdeng.cn/market/96284.html" target="_blank" title="枣夹核桃（散装10斤/箱）">
+										枣夹核桃（...
+											</a><span class="i-com-price">¥230.00</span></li>
+								<li><span class="i-com-time">01-12</span><a href="https://www.gdeng.cn/market/96206.html" target="_blank" title="枣圈（灰枣大圈）20斤每箱">
+										枣圈（灰枣...
+											</a><span class="i-com-price">¥110.00</span></li>
+								</ul>
+							<ul class="loc-map-list clearfix">
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3091.html">
+										天顺酱菜批发</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3763.html">
+										湘衡豆制品配件</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3876.html">
+										一批城</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3889.html">
+										宏旺淀粉白糖</a></li>
+								</ul>
+						</div>	
+					</div>
+				</div>
+			<div class="i-com-cat-box com-cat-bdt4"><!--  -->
+					<div class="i-com-tbox clearfix">
+						<h2 class="i-com-t"><span class="i-com-t-ico"><img src="https://img.gdeng.cn/cate/whbsz/w4.png" width="25" height="25" /></span>禽蛋区</h2>
+						<a href="https://www.gdeng.cn/baishazhou/market/37.html" target="_blank" title="更多" class="i-com-more">更多>></a>
+					</div>
+					<div class="i-com-cbox clearfix">
+						<div class="i-com-catl">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/105.html" target="_blank" title="鸡蛋">鸡蛋</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/451.html" target="_blank" title="其它禽蛋">其它禽蛋</a>
+								</div>
+							<a href="http://www.gdeng.cn/product/list/37"><img src="https://img.gdeng.cn/2015/11/9/bbb10bd9f7ec4ba1bd2b747265be7641.jpg" target="_blank" width="179" height="192" ></a>
+							</div>
+						<div class="i-com-catr clearfix">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/112.html" title="鲜鸡蛋">鲜鸡蛋</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/502.html" title="咸蛋">咸蛋</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/452.html" title="其它">其它</a>
+								</div>
+							<ul class="i-com-neslist clearfix">
+								<li><span class="i-com-time">04-06</span><a href="https://www.gdeng.cn/market/103678.html" target="_blank" title="土鸡蛋">
+										土鸡蛋</a><span class="i-com-price">¥150.00</span></li>
+								<li><span class="i-com-time">04-06</span><a href="https://www.gdeng.cn/market/103676.html" target="_blank" title="乌鸡蛋">
+										乌鸡蛋</a><span class="i-com-price">¥260.00</span></li>
+								<li><span class="i-com-time">01-17</span><a href="https://www.gdeng.cn/market/96577.html" target="_blank" title="鲜鸡蛋粉鸡蛋禽蛋整箱批发">
+										鲜鸡蛋粉鸡...
+											</a><span class="i-com-price">¥140.00</span></li>
+								</ul>
+							<ul class="loc-map-list clearfix">
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3761.html">
+										老田禽蛋批发</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/4493.html">
+										永盛禽蛋批发</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/4507.html">
+										贺启禽蛋批发</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/4717.html">
+										永盛进出口</a></li>
+								</ul>
+						</div>	
+					</div>
+				</div>
+			<div class="i-com-cat-box com-cat-bdt5"><!--  -->
+					<div class="i-com-tbox clearfix">
+						<h2 class="i-com-t"><span class="i-com-t-ico"><img src="https://img.gdeng.cn/cate/whbsz/w6.png" width="25" height="25" /></span>粮油区</h2>
+						<a href="https://www.gdeng.cn/baishazhou/market/39.html" target="_blank" title="更多" class="i-com-more">更多>></a>
+					</div>
+					<div class="i-com-cbox clearfix">
+						<div class="i-com-catl">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/455.html" target="_blank" title="粉面">粉面</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/137.html" target="_blank" title="食用油">食用油</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/134.html" target="_blank" title="稻米">稻米</a>
+								</div>
+							<a href="http://www.gdeng.cn/product/list/39"><img src="https://img.gdeng.cn/2015/11/9/c16c1575684a4569aeb3c5a2ed0822ac.jpg" target="_blank" width="179" height="192" ></a>
+							</div>
+						<div class="i-com-catr clearfix">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/456.html" title="面粉">面粉</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/503.html" title="面条">面条</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/504.html" title="粉丝">粉丝</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/505.html" title="其它粉面制品">其它粉面制品</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/153.html" title="玉米油">玉米油</a>
+								<span class="i-com-catrmw">
+										<a href="https://www.gdeng.cn/baishazhou/market/39.html" title="更多" class="i-com-catrmore">>></a>
+										<div class="i-com-catmlist">
+											<a href="https://www.gdeng.cn/baishazhou/market/154.html" title="菜籽油">菜籽油</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/150.html" title="调和油">调和油</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/158.html" title="其它食用油">其它食用油</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/138.html" title="大米">大米</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/453.html" title="黄豆">黄豆</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/454.html" title="绿豆">绿豆</a>
+												<span class="header-sidenav-spilt">|</span>
+											<a href="https://www.gdeng.cn/baishazhou/market/148.html" title="其它杂粮">其它杂粮</a>
+												<span class="header-sidenav-spilt">|</span>
+											</div>
+									</span>
+								</div>
+							<ul class="i-com-neslist clearfix">
+								<li><span class="i-com-time">11-02</span><a href="https://www.gdeng.cn/market/108608.html" target="_blank" title="面粉">
+										面粉</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">12-16</span><a href="https://www.gdeng.cn/market/92580.html" target="_blank" title="荞麦面（50斤）">
+										荞麦面（5...
+											</a><span class="i-com-price">¥115.00</span></li>
+								<li><span class="i-com-time">12-16</span><a href="https://www.gdeng.cn/market/92579.html" target="_blank" title="苦荞面（50斤）">
+										苦荞面（5...
+											</a><span class="i-com-price">¥125.00</span></li>
+								<li><span class="i-com-time">08-18</span><a href="https://www.gdeng.cn/market/77747.html" target="_blank" title="陈克明1000g系列面条">
+										陈克明10...
+											</a><span class="i-com-price">¥100.00</span></li>
+								<li><span class="i-com-time">06-25</span><a href="https://www.gdeng.cn/market/72175.html" target="_blank" title="双宇牌夏门拉面">
+										双宇牌夏门...
+											</a><span class="i-com-price">¥17.00</span></li>
+								<li><span class="i-com-time">01-19</span><a href="https://www.gdeng.cn/market/39703.html" target="_blank" title="五得利粒面条">
+										五得利粒面...
+											</a><span class="i-com-price">¥50.00</span></li>
+								</ul>
+							<ul class="loc-map-list clearfix">
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3853.html">
+										易杰粮油</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3856.html">
+										颖奥粮油经营部</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3857.html">
+										龙鑫粮油</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3891.html">
+										河南特产芝麻酱</a></li>
+								</ul>
+						</div>	
+					</div>
+				</div>
+			<div class="i-com-cat-box com-cat-bdt6"><!--  -->
+					<div class="i-com-tbox clearfix">
+						<h2 class="i-com-t"><span class="i-com-t-ico"><img src="https://img.gdeng.cn/cate/whbsz/w7.png" width="25" height="25" /></span>冻品区</h2>
+						<a href="https://www.gdeng.cn/baishazhou/market/40.html" target="_blank" title="更多" class="i-com-more">更多>></a>
+					</div>
+					<div class="i-com-cbox clearfix">
+						<div class="i-com-catl">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/161.html" target="_blank" title="冻品类">冻品类</a>
+								</div>
+							<a href="http://www.gdeng.cn/product/list/40"><img src="https://img.gdeng.cn/2015/11/9/c15d80c1c48c4764b9b31630305b0447.jpg" target="_blank" width="179" height="192" ></a>
+							</div>
+						<div class="i-com-catr clearfix">
+							<div class="i-com-catlList">
+								<a href="https://www.gdeng.cn/baishazhou/market/168.html" title="肉类冻品">肉类冻品</a>
+								<a href="https://www.gdeng.cn/baishazhou/market/173.html" title="其它冻品">其它冻品</a>
+								</div>
+							<ul class="i-com-neslist clearfix">
+								<li><span class="i-com-time">11-02</span><a href="https://www.gdeng.cn/market/108599.html" target="_blank" title="五花肉">
+										五花肉</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">04-06</span><a href="https://www.gdeng.cn/market/103679.html" target="_blank" title="新鲜现杀乌鸡肉">
+										新鲜现杀乌...
+											</a><span class="i-com-price">面议</span></li>
+								<li><span class="i-com-time">02-14</span><a href="https://www.gdeng.cn/market/98661.html" target="_blank" title="手抓饼">
+										手抓饼</a><span class="i-com-price">¥85.00</span></li>
+								<li><span class="i-com-time">11-02</span><a href="https://www.gdeng.cn/market/108671.html" target="_blank" title="鸡胸肉">
+										鸡胸肉</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">11-02</span><a href="https://www.gdeng.cn/market/108670.html" target="_blank" title="五花肉">
+										五花肉</a><span class="i-com-price">¥1.00</span></li>
+								<li><span class="i-com-time">11-02</span><a href="https://www.gdeng.cn/market/108669.html" target="_blank" title="肉丝">
+										肉丝</a><span class="i-com-price">¥1.00</span></li>
+								</ul>
+							<ul class="loc-map-list clearfix">
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3864.html">
+										福盛水产</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3910.html">
+										国庆水产</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3912.html">
+										诚信冷库</a></li>
+								<li class="loc-map-ico fn-text"><a href="https://www.gdeng.cn/baishazhou/business/shop/3911.html">
+										阳光冷库</a></li>
+								</ul>
+						</div>	
+					</div>
+				</div>
+			<!--冻品区 end-->
+		</div>
+		<!--类目 end-->
+		<!--货主找车-->
+		<div class="i-wl-box clearfix">
+			<div class="i-wl-wrap">
+				<div class="i-com-tbox clearfix">
+					<h2 class="i-com-t"><span class="i-com-wl-ico i-com-wl-ico1"></span>货主找车</h2>
+					<a href="https://www.gdeng.cn/logistics.html" target="_blank" title="更多" class="i-com-more">更多>></a>
+				</div>
+				<div class="wuliu-list">
+					<table width="200" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							    <td><span class="wl-start">北京市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">石家庄市</span></td>
+							    <td><div class="wl-width">
+							    	面议</div></td>
+							    <td>发车时间</td>
+							    <td>09-19</td>
+							    <td></td>
+							</tr>
+						<tr>
+							    <td><span class="wl-start">驻马店市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">张家口市</span></td>
+							    <td><div class="wl-width">
+							    	面议</div></td>
+							    <td>发车时间</td>
+							    <td>09-19</td>
+							    <td></td>
+							</tr>
+						<tr>
+							    <td><span class="wl-start">新乡市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">武汉市</span></td>
+							    <td><div class="wl-width">
+							    	面议</div></td>
+							    <td>发车时间</td>
+							    <td>09-19</td>
+							    <td>上午</td>
+							</tr>
+						<tr>
+							    <td><span class="wl-start">钦州市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">南宁市</span></td>
+							    <td><div class="wl-width">
+							    	面议</div></td>
+							    <td>发车时间</td>
+							    <td>09-18</td>
+							    <td></td>
+							</tr>
+						<tr>
+							    <td><span class="wl-start">钦州市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">南宁市</span></td>
+							    <td><div class="wl-width">
+							    	面议</div></td>
+							    <td>发车时间</td>
+							    <td>09-18</td>
+							    <td></td>
+							</tr>
+						</table>	
+				</div>				
+			</div>
+			<div class="i-wl-wrap">
+				<div class="i-com-tbox clearfix">
+					<h2 class="i-com-t"><span class="i-com-wl-ico i-com-wl-ico2"></span>司机找货</h2>
+					<a href="https://www.gdeng.cn/logistics/queryGoodsList" target="_blank" title="更多" class="i-com-more">更多>></a>
+				</div>
+				<div class="wuliu-list">
+					<table width="200" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							    <td><span class="wl-start">
+							    武汉市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">
+							    延边朝鲜族自治州</span></td>
+							    <td><div class="wl-width2"></div></td>
+							    <td>装车时间</td>
+							    <td>不限</td>
+							    <td></td>
+							</tr>
+						<tr>
+							    <td><span class="wl-start">
+							    武汉市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">
+							    常州市</span></td>
+							    <td><div class="wl-width2"></div></td>
+							    <td>装车时间</td>
+							    <td>不限</td>
+							    <td></td>
+							</tr>
+						<tr>
+							    <td><span class="wl-start">
+							    武汉市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">
+							    通辽市</span></td>
+							    <td><div class="wl-width2"></div></td>
+							    <td>装车时间</td>
+							    <td>不限</td>
+							    <td></td>
+							</tr>
+						<tr>
+							    <td><span class="wl-start">
+							    武汉市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">
+							    北海市</span></td>
+							    <td><div class="wl-width2"></div></td>
+							    <td>装车时间</td>
+							    <td>不限</td>
+							    <td></td>
+							</tr>
+						<tr>
+							    <td><span class="wl-start">
+							    武汉市</span></td>
+							    <td><span class="wl-ico"></span></td>
+							    <td><span class="wl-start">
+							    吉安市</span></td>
+							    <td><div class="wl-width2"></div></td>
+							    <td>装车时间</td>
+							    <td>不限</td>
+							    <td></td>
+							</tr>
+						</table>	
+				</div>				
+			</div>
+		</div>
+		<!--货主找车 end-->
+	</div>
+	<!--main end-->
+	<div class="bottom-banner">
+		<div class="wrap-1170 bottom-ban">
+			<ul class="bottom-ban-l clearfix">
+				<li class="clearfix bottom-ban-item1">
+					<span  class="b-ban-ico b-ban-ico1"></span>
+					<dl class="b-ban-txt">
+						<dt>专注农批</dt>
+						<dd>全国13家知名一级批发市场率先入驻</dd>
+					</dl>
+				</li>
+				<li class="clearfix">
+					<span  class="b-ban-ico b-ban-ico2"></span>
+					<dl class="b-ban-txt">
+						<dt>精准货源</dt>
+						<dd>批发市场精准农产信息</dd>
+					</dl>
+				</li>
+				<li class="clearfix bottom-ban-item3">
+					<span  class="b-ban-ico b-ban-ico3"></span>
+					<dl class="b-ban-txt">
+						<dt>实时价格</dt>
+						<dd>每日更新，全国最新</dd>
+					</dl>
+				</li>
+				<li class="clearfix">
+					<span  class="b-ban-ico b-ban-ico4"></span>
+					<dl class="b-ban-txt">
+						<dt>全国物流</dt>
+						<dd>一站解决货源，车源</dd>
+					</dl>
+				</li>
+				<li class="clearfix bottom-ban-item5">
+					<span  class="b-ban-ico b-ban-ico5"></span>
+					<dl class="b-ban-txt">
+						<dt>源头好货</dt>
+						<dd>买手遍布全国，提供源头好货</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- 友情链接start -->
+	<div class="txtScroll-top">
+    <h3 class="txtScroll-nav">友情链接：</h3>
+  	<div class="bd">
+        <div class="tempWrap" style="overflow:hidden; position:relative; height:24px">        	
+        	<div class="infoList clearfix">
+<!--         		<a href="http://www.xgzgo.com" target="_blank">纯茶油</a> -->
+<!-- 				<a target="_blank" href="http://www.cnnclm.com ">家庭农场</a> -->
+<!-- 				<a href="http://www.ruyinyuanlin.com/" target="_blank">江颜园林</a> -->
+<!-- 				<a href="http://www.szkzs.com/" target="_blank">食品调料网</a> -->
+<!-- 				<a href="http://www.wfgxsyxx.com" target="_blank">蔬菜大棚建设</a> -->
+<!-- 				<a href="http://www.gjmmyy.com" target="_blank">花卉苗木</a> -->
+<!-- 				<a href="http://www.hqnjl.cn" target="_blank">长兴农家乐</a> -->
+<!-- 				<a href="http://www.lanhaizi.cn" target="_blank">蓝孩子农资招商网</a> -->
+<!-- 				<a href="http://www.c1-c1.com" target="_blank">银杏树</a> -->
+<!-- 				<a href="http://www.hbmmjd.com" target="_blank">河北苗木基地</a>				 -->
+<!-- 				<a target="_blank" href="http://www.yucmall.cn">粘虫板</a> -->
+<!-- 				<a target="_blank" href="http://www.xxhr.org">杀虫灯</a> -->
+<!-- 				<a target="_blank" href="http://www.mqybj.com">灭蚊器</a> -->
+<!-- 				<a target="_blank" href="http://www.yubangbang.com">渔病医院</a> -->
+<!-- 				<a target="_blank" href="http://www.jinhunongye.com">铁皮石斛种植</a> -->
+<!-- 				<a target="_blank" href="http://www.boxing6.com">肉牛价格</a> -->
+<!-- 				<a target="_blank" href="http://www.shumiao.tw">苗木</a> -->
+<!-- 				<a target="_blank" href="http://www.hywjsljd.com">河阴石榴树苗</a> -->
+<!-- 				<a target="_blank" href="http://www.tianzhugui.net">天竺桂</a> -->
+<!-- 				<a target="_blank" href="http://www.hszhushu.com">广西竹鼠</a> -->
+<!-- 				<a target="_blank" href="http://www.zzt369.com">韭蛆特效药</a> -->
+<!-- 				<a href="http://www.jlsjsm.com" target="_blank">长春蔬菜配送</a> -->
+<!-- 				<a href="http://www.seed17.com" target="_blank">种子仪器</a> -->
+<!-- 				<a target="_blank" href="http://www.gsnjl.cn">长兴农家乐</a> -->
+<!-- 				<a target="_blank" href="http://www.b8gy.com">肉鸽养殖</a> -->
+<!-- 				<a target="_blank" href="http://www.51wyj.net">大樱桃苗</a> -->
+<!-- 				<a target="_blank" href="http://www.grgyedu.com">冬枣苗</a> -->
+<!-- 				<a target="_blank" href="http://www.jkyfs.com">进口鱼粉价格</a> -->
+<!-- 				<a target="_blank" href="http://www.35838.com">养猪网</a> -->
+<!-- 				<a target="_blank" href="http://www.ahcfyl.com">北美红栎小苗</a> -->
+<!-- 				<a target="_blank" href="http://www.nongyeguihua.com">休闲农业规划</a> -->
+<!-- 				<a target="_blank" href="http://nongyao.1988.tv">农药价格</a> -->
+<!-- 				<a target="_blank" href="http://www.nykcw.com">农业快车网</a> -->
+<!-- 				<a target="_blank" href="http://www.inongjishu.com">农业技术网</a> -->
+<!-- 				<a target="_blank" href="http://www.ddlhmm.com">高杆红叶石楠</a> -->
+<!-- 				<a target="_blank" href="http://www.xiangcunmm.com">香椿苗</a> -->
+<!-- 				<a target="_blank" href="http://www.imiansha.com">色纱</a> -->
+<!-- 				<a target="_blank" href="http://www.guo52.com">板栗批发</a> -->
+	        	<a href="http://www.xgzgo.com" target="_blank">纯茶油</a>
+				<a href="http://www.szkzs.com" target="_blank">食品调料网</a>
+				<a href="http://www.gjmmyy.com" target="_blank">花卉苗木</a>
+				<a href="http://www.lanhaizi.cn" target="_blank">蓝孩子农资招商网</a>
+				<a href="http://www.c1-c1.com" target="_blank">银杏树</a>
+				<a href="http://www.hbmmjd.com" target="_blank">河北苗木基地</a>
+				<a href="http://www.jinhunongye.com" target="_blank">铁皮石斛种植</a>
+				<a href="http://www.boxing6.com" target="_blank">肉牛价格</a>
+				<a href="http://www.hywjsljd.com" target="_blank">河阴石榴树苗</a>
+				<a href="http://www.hszhushu.com" target="_blank">广西竹鼠</a>
+				<a href="http://www.b8gy.com" target="_blank">肉鸽养殖</a>
+				<a href="http://www.51wyj.net" target="_blank">大樱桃苗</a>
+				<a href="http://www.grgyedu.com" target="_blank">冬枣苗</a>
+				<a href="http://www.jkyfs.com" target="_blank">进口鱼粉价格</a>
+				<a href="http://www.35838.com" target="_blank">养猪网</a>
+				<a href="http://www.ahcfyl.com" target="_blank">北美红栎小苗</a>
+				<a href="http://www.nongyeguihua.com" target="_blank">休闲农业规划</a>
+				<a href="http://www.nykcw.com" target="_blank">农业快车网</a>
+				<a href="http://www.inongjishu.com" target="_blank">农业技术网</a>
+				<a href="http://www.ddlhmm.com" target="_blank">高杆红叶石楠</a>
+				<a href="http://www.zaliang88.com/" target="_blank">杂粮网</a>
+				<a href="http://www.gonglube.com" target="_blank">贵州农业信息网</a>
+				<a href="http://www.8yiyi.com/" target="_blank">巴依依小米网</a>
+				</div>
+        </div>
+  	</div>
+  	<p class="txtScroll-more"><a href="https://www.gdeng.cn/about/marketlink" target="_bank">更多&gt;&gt;</a></p>
+  </div>
+	<!-- 友情链接end -->
+	<div class="foot-link">
+	<div class="wrap-1170 clearfix foot-link-wrap">			
+		<div class="foot-link-b clearfix">
+			<dl class="footer-link-list">
+				<dt><a target="_blank" href="http://www.gdeng.cn/" title="网站首页">网站首页</a></dt>
+				<dd><a target="_blank" href="https://www.gdeng.cn/about.html" title="关于我们">关于我们</a></dd>
+				<dd><a target="_blank" href="https://www.gdeng.cn/contactus.html" title="联系我们">联系我们</a></dd>
+				<dd><a target="_blank" href="https://www.gdeng.cn/about/marketlink" title="友情链接">友情链接</a></dd>
+				<dd><a target="_blank" href="https://www.gdeng.cn/sitemap.html" title="网站地图">网站地图</a></dd>
+			</dl>
+			<dl class="footer-link-list">
+				<dt><a target="_blank" href="https://www.gdeng.cn/help.html" title="新手指南">新手指南</a></dt>
+				<dd><a target="_blank" href="https://www.gdeng.cn/help.html" title="注册新用户">注册新用户</a></dd>
+				<dd><a target="_blank" href="https://www.gdeng.cn/help/accopass" title="账号密码">账号密码</a></dd>
+			</dl>
+			<dl class="footer-link-list">
+				<dt><a target="_blank" href="https://www.gdeng.cn/baishazhou/market.html" title="农产批发">农产批发</a></dt>
+				<dd><a target="_blank" href="https://www.gdeng.cn/baishazhou/market.html" title="农批市场">农批市场</a></dd>
+				<dd><a target="_blank" href="https://www.gdeng.cn/baishazhou/business.html" title="农批商户">农批商户</a></dd>
+			</dl>
+			<dl class="footer-link-list">
+				<dt><a target="_blank" href="https://www.gdeng.cn/logistics.html" title="物流服务">物流服务</a></dt>
+				<dd><a target="_blank" href="https://www.gdeng.cn/logistics.html" title="货主找车">货主找车</a></dd>
+				<dd><a target="_blank" href="https://www.gdeng.cn/logistics/queryGoodsList" title="司机找货">司机找货</a></dd>
+			</dl>
+			<dl class="footer-link-list">
+				<dt><a target="_blank" href="https://www.gdeng.cn/help/buyerpian" title="交易安全">交易安全</a></dt>
+				<dd><a target="_blank" href="https://www.gdeng.cn/help/buyerpian" title="买家防骗">买家防骗</a></dd>
+				<dd><a target="_blank" href="https://www.gdeng.cn/help/salerpian" title="卖家防骗">卖家防骗</a></dd>
+			</dl>
+               <div class="foot-ewm">
+               	<dl class="foot-ewm-list">
+               		<dt>手机客户端</dt>
+               		<dd><img src="https://www.gdeng.cn/v1.0/images/ewm-temp4.jpg" width="115" height="115"></dd>
+               	</dl>
+               	<dl class="foot-ewm-list">
+               		<dt>官方微信</dt>
+               		<dd><img src="https://www.gdeng.cn/v1.0/images/ewm-temp3.jpg?v=20151104" width="115" height="115"></dd>
+               	</dl>
+               </div>
+               <dl class="foot-ser">
+               	<dt><img src="https://www.gdeng.cn/v1.0/images/logo.png" alt="谷登农批网-国内领先O2O农批平台" width="202"></dt>
+               	<dd><span class="foot-ser-ico"></span>全国服务热线</dd>
+               	<dd class="f-ser-tel">4007-600-800</dd>
+               </dl>
+		</div>
+	</div>
+</div>
+<div class="footer-bottom">
+    <div class="wrap-1200 clearfix">            
+        <div class="f-copyright">
+			<p>
+				<a target="_blank" href="http://beian.miit.gov.cn">粤ICP备18074177号</a>
+				版权所有©深圳谷登科技有限公司
+			</p>
+			<p>
+				<a target="_blank" href="http://www.gdeng.cn/notice-cont/30">增值电信业务经营许可证
+					粤B2-20160527</a>
+			</p>
+			<p>
+				<a target="_blank" href="http://www.gdeng.cn/notice-cont/31">食品经营许可证 JY14403040084856</a> | 
+				<a target="_blank" href="http://www.gdeng.cn/zhizhao.png">营业执照 914403003578785888</a>
+			</p>
+		</div>
+    </div>
+</div>
+<script type="text/javascript" src="https://www.gdeng.cn/v1.0/js/common.js"></script>
+<script type="text/javascript" src="https://www.gdeng.cn/js/commonPage.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?171a81124f328875e7ce819aadac291e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- WPA Button Begin -->
+<script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzkzODAzNjk2N18zNDIzNzRfNDAwNzYwMDgwMF8"></script>
+<!-- WPA Button END -->
+
+<!-- fixed tool -->
+	<style>
+  .b-mark-m li{ background:none; height:auto; width:90px;}
+</style>
+<div class="page-fixed">
+	<ul class="r-fixed-tool">
+		<li><a href="https://www.gdeng.cn/service.html" target="_blank"><span class="rft-nav-t"><span class="rft-ico rft-ico-ser"></span>客服</span></a></li>
+		<li class="rft-qrbtn"><a href="javascript:;"><span class="rft-nav-t"><span class="rft-ico rft-ico-qr"></span>二维码</span></a></li>
+	</ul>
+	<ul class="i-page-fixed-list">
+		<li class=""><a href="javascript:;"><span class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w1.png"  width="25" height="25" /></span>水产</span></a></li>
+		<li class=""><a href="javascript:;"><span class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w2.png"  width="25" height="25" /></span>果蔬</span></a></li>
+		<li class=""><a href="javascript:;"><span class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w3.png"  width="25" height="25" /></span>干调</span></a></li>
+		<li class=""><a href="javascript:;"><span class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w4.png"  width="25" height="25" /></span>禽蛋</span></a></li>
+		<li class=""><a href="javascript:;"><span class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w6.png"  width="25" height="25" /></span>粮油</span></a></li>
+		<li class=""><a href="javascript:;"><span class="side-nav-t-lev1"><span class="side-nav-ico"><img src="https://img.gdeng.cn/cate/whbsz/w7.png"  width="25" height="25" /></span>冻品</span></a></li>
+		</ul>
+</div>
+	
+<!--bottom fixed-->
+<div class="bottom-mark">
+   	<div class="b-mark-con clearfix">
+       	<div class="b-mark-l">
+       		<img src="https://www.gdeng.cn/v1.0/images/b-fixed-pic2.png" width="564" height="111" alt="进货怕吃亏？快用农商友！-安装注册后，海量货源，多类产品，透明价格，一手掌握！">
+       	</div>
+       	<ul class="b-mark-m clearfix">
+       		<!-- <li class="clearfix"><span class="b-m-qrtxt"><span>农商友</span></span><span class="b-m-qrcode"><img src="http://www.gdeng.cn/v1.0/images/shop-images/sao.png" width="99" height="99" alt="农商友"></span></li>
+       		<li class="clearfix"><span class="b-m-qrtxt"><span class="fsz-nps">农商友<span class="fsz12">|</span>农批商</span></span><span class="b-m-qrcode"><img src="http://www.gdeng.cn/v1.0/images/shop-images/sao-sell.png" width="99" height="99" alt="农商友-农批商"></span></li>
+       		<li class="clearfix"><span class="b-m-qrtxt"><span>农速通</span></span><span class="b-m-qrcode"><img src="http://www.gdeng.cn/v1.0/images/shop-images/cap.png" width="99" height="99" alt="农速通"></span></li>
+       		<li class="clearfix"><span class="b-m-qrtxt"><span>农速通</span></span><span class="b-m-qrcode"><img src="http://www.gdeng.cn/v1.0/images/shop-images/cap.png" width="99" height="99" alt="农速通"></span></li>
+       		<li class="clearfix"><span class="b-m-qrtxt"><span>农商友</span></span><span class="b-m-qrcode"><img src="http://www.gdeng.cn/v1.0/images/shop-images/sao.png" width="99" height="99" alt="农商友"></span></li> -->
+       		<li class="clearfix"><img src="https://www.gdeng.cn/v1.0/images/shop-images/1.png" width="82" height="104" alt="农商友"></li>
+       		<li class="clearfix"><img src="https://www.gdeng.cn/v1.0/images/shop-images/2.png" width="90" height="106" alt="农商友-农批商"></li>
+       		<li class="clearfix"><img src="https://www.gdeng.cn/v1.0/images/shop-images/3.png" width="90" height="104" alt="农商友-供应商"></li>
+       		<li class="clearfix"><img src="https://www.gdeng.cn/v1.0/images/shop-images/4.png" width="82" height="104" alt="农速通"></li>
+       	</ul>
+       	<a href="javascript:;" class="close-f"></a>
+   	</div>
+  		
+</div>
+<!--bottom fixed-->
+
+<script type="text/javascript">
+$(function(){
+	$.ajax({
+		type:'POST',
+		url:CONTEXT+'login/isLogin',
+		dataType: 'json',
+		success:function(data){
+			if(data.mbdto!=null){
+				centertemp="<a href='https://www.gdeng.cn/userCenter' title='进入我的会员中心' class='i-go-meb fl'>进入我的会员中心</a>";
+				$("#memberChoose").html(centertemp);
+			}else{
+				logintemp="<a href='https://www.gdeng.cn/login/initRegister' title='注册' class='i-signin-btn fl'>注  册</a>"+
+				"<a href='https://www.gdeng.cn/login/initLogin' title='登录' class='i-signout-btn fr'>登  录</a>";
+				$("#memberChoose").html(logintemp);
+			}
+		}
+	});
+	var time = new Date(); //获得当前时间
+	var year = time.getFullYear();//获得年、月、日
+	var month = time.getMonth() + 1;
+	var day = time.getDate(); 
+	$(".i-nowtime").html(year+"/"+month+"/"+day);
+});
+</script>
+<script>
+var  _hmt  =  _hmt  ||  [];
+(function()  {
+    var  hm  =  document.createElement("script");
+    hm.src  =  "//hm.baidu.com/hm.js?e2dcda84fba5f34e3f6954d2990a58fa";
+    var  s  =  document.getElementsByTagName("script")[0];  
+    s.parentNode.insertBefore(hm,  s);
+})();
+</script></body>
+</html>
+

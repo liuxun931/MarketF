@@ -8,15 +8,34 @@ from Pay.models import Payment
 
 # Register your models here.
 
+admin.site.empty_value_display = '-empty-'
+
 
 from .import models 
 
-admin.site.register(EndUser)
-admin.site.register(Order)
+# admin.site.register(EndUser)
+# admin.site.register(Order)
 admin.site.register(OrderStatus)
 admin.site.register(Payment)
 admin.site.register(Products)
 admin.site.register(ShippingAddress)
 admin.site.register(Shipment)
 
-
+@admin.register(EndUser)
+class EndUserAdmin(admin.ModelAdmin):
+    exclude = ('password','first_name','last_name',)
+    list_display = ('username', 'score','score_id', 'last_login','mp','date_joined',)
+    list_editable = ('score_id', 'mp', 'score',)
+    list_filter = ('is_staff', 'groups')
+    list_max_show_all = 50
+    list_per_page = 50
+    pass
+    
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    date_hierarchy = 'orderdate'
+    empty_value_display = '-empty-'
+    list_display = ('orderer', 'cost','orderdate', 'payment_type',)
+    list_max_show_all = 50
+    list_select_related = ('orderer',)
+    pass

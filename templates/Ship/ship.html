@@ -1,0 +1,46 @@
+{% extends "product_base.html" %}
+
+{% block product %}
+<div class="container">
+<div class="row">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+<div class ="text-center" style="padding-bottom:10%;padding-top:10%;">
+    <h2>物流列表</h2>
+    
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <table class="table table-striped table-hover" >
+
+  <thead>
+    <tr>
+      <th scope="col">订单</th>
+      <th scope="col">地址</th>
+      <th scope="col">发货日期</th>
+      <th scope="col">物流公司</th>
+      <th scope="col">物流公单号</th>
+      <th scope="col">是否签收</th>
+      <th scope="col">签收日期</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+  {% for c in object_list %}
+    <tr>
+      <th scope="row">{{ c.owner }} </th>
+      <td> {{ c.address }}</td>
+      <td> {{ c.send_date }}</td>
+      <td>{{ c.ship_cmpn }}</td>
+      <td>{{ c.ship_num }}</td>
+      <td>{{ c.is_accetped}}</td>
+      <td>{{ c.is_accept_date}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+  
+</table>    
+
+{% endblock %}
