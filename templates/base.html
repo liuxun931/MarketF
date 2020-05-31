@@ -16,6 +16,12 @@
 
 
 <body>
+<style>
+.body{
+	enable-gradients:True;
+}
+</style>
+
 <script src="{% static "js/jquery-3.4.1.js" %}"></script>
 <script src="{% static "chartjs/Chart.js" %}"></script>
 
@@ -32,50 +38,50 @@
 <script src="{% static "bootstrap/bootstrap.js" %}"   crossorigin="anonymous"></script>
 
 
-				<!-- navi bar -->
-				<div>
-				<nav class="navbar navbar-expand-lg navbar-light bg-light">
-					<a class="navbar-brand" href="#">欢迎！</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
+	<!-- navi bar -->
+	<div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">欢迎！</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active">
-								<a class="nav-link" href="/Portal/">主页 <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="/Portal/">APP（无）</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="/Fmarket/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							卖家登录
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="/Fmarket/">下订单</a>
-									<a class="dropdown-item" href="/Fmarket/">订单管理</a>
-									<div class="dropdown-divider"></div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="/Portal/">主页 <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="/Portal/">APP（无）</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="/Fmarket/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				卖家登录
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="/Fmarket/">下订单</a>
+						<a class="dropdown-item" href="/Fmarket/">订单管理</a>
+						<div class="dropdown-divider"></div>
 
-								</div>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#">主营方：文叶叶的特优农产品市场</a>
-							</li>
-						</ul>
-						<div class="form-inline my-2 my-lg-0">
-							{% if user.username == '' %}
-								<p><a href="/accounts/login/">登录</a><p/>
-							{% else %}
-								<!-- <p>您好：<a href="/User/home/{{user.pk}}">{{user.username}}</a>, <a href='/accounts/logout/'>退出登录</a></p> -->
-								<p>您好：<a href="/User/home/">{{user.username}}</a>, <a href='/accounts/logout/'>退出登录</a></p>
-							{% endif%}
-						</div>
-							
-						</div>
-					</nav>
 					</div>
-					<!-- end navi -->
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">主营方：文叶叶的特优农产品市场</a>
+				</li>
+			</ul>
+			<div class="form-inline my-2 my-lg-0">
+				{% if user.username == '' %}
+					<p><a href="/accounts/login/"><div class="">登录</div></a><p/>
+				{% else %}
+					<!-- <p>您好：<a href="/User/home/{{user.pk}}">{{user.username}}</a>, <a href='/accounts/logout/'>退出登录</a></p> -->
+					<p><div>您好：<a href="/User/home/">{{user.username}},</a></div> <div class=""><a href='/accounts/logout/'> 退出登录</a></div></p>
+				{% endif%}
+			</div>
+				
+			</div>
+		</nav>
+		</div>
+		<!-- end navi -->
 
 
 	{% block layer2 %}
@@ -201,15 +207,19 @@
     display: flex;
     justify-content: center;
     padding: 5px;
+	padding-bottom:0;
     background-color: black;
     color: #fff;
 }
 </style>
-<div class="modal-footer">
+<div class="footer bg-white .bg-gradient-success text-dark modal-footer ">
 <div class="container">
 <div class="row">
-	  <p>Coded by: Xun.Liu James</p>
-	  <p>Email: <a href="mailto:liuxun931@163.com">liuxun931@163.com</a></p>
+<div class="col-6 offset-md-3">
+
+	  <p>Coded by: Xun.Liu James Email: <a href="mailto:liuxun931@163.com">liuxun931@163.com</a></p>
+
+</div>
 </div>
 </div>
 </div> 

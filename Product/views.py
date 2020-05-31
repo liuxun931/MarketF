@@ -12,6 +12,13 @@ from Product.models import Products,ProductImgs
 #import forms
 from User import forms
 
+
+#import qrcode
+import qrcode
+from MarketF.settings import BASE_DIR
+import os.path
+
+
 # Create your views here.
 
 # --------------------Fmarket view----------------------------------
@@ -48,5 +55,11 @@ class ProductDetail(TemplateView):
         context = super().get_context_data(**kwargs)
         context['product'] = Products.objects.order_by('pk')[:20]
         context['img'] = ProductImgs.objects.all()[:3]
+        qr_url = self.request.get_raw_uri()
+        # print(self.request.get_raw_uri())
+
+        qr_image = qrcode.make(qr_url)
+        context['qr_img'] = qr_image
+        path = os.path.join(os.path.realpath(os.path.curdir),'static\\temp')
+        qr_image.save(path + '/qr_code.jpg', "jpeg")
         return context
-        
