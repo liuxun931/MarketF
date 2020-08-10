@@ -15,7 +15,17 @@
     {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
+<style>
+#login_form {
+	padding-top:50%;
+	padding-bottom: 30%;
+	text-align: center;
+}
+
+</style>
+
+
+<form method="post" action="{% url 'login' %}" id="login_form">
 {% csrf_token %}
 <table>
 <tr>
