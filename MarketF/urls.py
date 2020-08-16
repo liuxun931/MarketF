@@ -27,7 +27,7 @@ sitemaps = {
     'static': FmarketSitemap,
 }
 
-
+ 
 urlpatterns = [
     #redirects root '/'  to Fmarket app mainpage
     path(r'', views.index, name = 'index'), 
@@ -41,8 +41,8 @@ urlpatterns = [
     path('Product/', include('Product.urls')),
     path('Order/', include('Order.urls')),
     path('Ship/', include('Ship.urls')),
-
     path('Cart/', include('Cart.urls')),
+
     path('DashBoard/', include('DashBoard.urls')),
     #path('Pay/', include('Pay.urls')),
     path(r'Portal/', views.PortalView.as_view(),),

@@ -5,10 +5,16 @@ from django.db import models
     cart for each user, 1 user for 1 cart;
 '''
 
-class cart(models.Model):
+class Cart(models.Model):
+    '''
+    1 person = 1 cart 
+    2 那些商品，各自数量； 删除或继续
+    3 选中计算 总价
+    4. 结账
+    '''
     pass
     
-class cart_items(models.Model):
+class Cart_Items(models.Model):
     '''
     show each goods and amount of goods in an Order
     1. foreignkey Order

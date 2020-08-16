@@ -3,10 +3,9 @@
 """
 
 from django.urls import path
+from Cart import views
 
 
 urlpatterns = [
-    
-    #path('main.html', MainPage.as_view(), name = 'mainpage'),
-
+    path(r'', views.CartView.as_view(), name ='cartview' ),
 ]
