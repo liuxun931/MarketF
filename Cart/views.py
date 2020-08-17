@@ -38,14 +38,14 @@ class CartView(MyPermRequireMixin,TemplateView):
         
         context['user'] = self.request.user.enduser
         context['cart'] = Cart.objects.filter(user=self.request.user.enduser)
+        
+        
         self.request.session['user_id'] = 'liuxun'
         print(self.request.session['user_id'])
         
         #self.request.session['username'] = self.request.user.enduser
         return context
-        
-        
-        
+
 class AddtoCart(MyPermRequireMixin,TemplateView):
     pass
     

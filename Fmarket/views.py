@@ -84,7 +84,8 @@ class PermissionError(LoginRequiredMixin, TemplateView):
 
 class PortalView(TemplateView):
     template_name = 'Portal/portal.html'
-
-
-class PortalView2(TemplateView):
-    template_name = 'Fmarket/portal2.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['products'] = Products.objects.all()[0:3]
+        
+        return context

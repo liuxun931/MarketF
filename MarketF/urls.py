@@ -46,7 +46,6 @@ urlpatterns = [
     path('DashBoard/', include('DashBoard.urls')),
     #path('Pay/', include('Pay.urls')),
     path(r'Portal/', views.PortalView.as_view(),),
-    path(r'Portal2/', views.PortalView2.as_view(),),
     
     # sitemap path
     # path(r'accounts/', include('allauth.urls')),

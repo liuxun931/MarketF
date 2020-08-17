@@ -77,7 +77,7 @@
 	<!-- product name and order button -->
 	<div class="row">
 	<div class="col-md-12 ">
-	<h3>特别培养大樱桃-进口育苗-绿色种植-科学培养-手工包装-急速闪电物流-冰鲜运输-每年仅4月供-爆款-主打-限量购买</h3><br>
+	<h3>{{product.name}}</h3><br>
 	</div>
 	</div>
 	
@@ -92,19 +92,20 @@
 	<div class="form-group">
 	<div class="row" style="padding-bottom:15px;">
 	<div class="col-md-3">
-	<p>价格: <span style="color:red;"> ￥ 33.80</span><span style="font-size:small;">/500g</span> </p>
+	<p>价格: <span style="color:red;"> ￥ {{product.unit_price}}</span><span style="font-size:small;">/{{product.unit}}</span> </p>
 	</div>
 
 	
 	<div class="col-md-4">
 	<label for="number-input" >数量:</label>
-		<input id="number-input" type="number" style="width:50px;"></input>
+		<input id="number-input" type="number" style="width:50px;" value="1"></input>
 	</div>
 	</div>
 	
 	<div class="row ">
 		<div class="col-md-6 offset-md-6">
-		<button type="submit" class="btn btn-outline-danger">加入购物车</button> 
+		<button type="submit" class="btn btn-outline-danger" href="/Cart/AddtoCart/?productid={{product.id}}">
+			加入购物车{{product.id}}</button> 
 		<button type="submit" class="btn btn-danger">立即购买</button>
 		</div>
 	</div>
@@ -143,18 +144,11 @@
 		<p style="">商品属性：</p>
 	<div class="row row-cols-4" style="padding-bottom:20px;">
 	
-	<div class="col" style="font-size:small">产地：</div>
-	<div class="col" style="font-size:small">单位：</div>
+	<div class="col" style="font-size:small">产地：{{product.place}}</div>
+	<div class="col" style="font-size:small">单位：{{product.unit}}</div>
 	<div class="col" style="font-size:small">包装：</div>
 	<div class="col" style="font-size:small">尺存：</div>
-	<div class="col" style="font-size:small">产地：</div>
-	<div class="col" style="font-size:small">单位：</div>
-	<div class="col" style="font-size:small">包装：</div>
-	<div class="col" style="font-size:small">尺存：</div>
-	<div class="col" style="font-size:small">产地：</div>
-	<div class="col" style="font-size:small">单位：</div>
-	<div class="col" style="font-size:small">包装：</div>
-	<div class="col" style="font-size:small">尺存：</div>
+
 	</div>
 	
 	<!-- 分割线 -->

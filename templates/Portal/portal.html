@@ -105,58 +105,20 @@
 	<div class="container">
 
         <div class="row rol-col-5">
-
+		    {% for p in products %}
           <div class="col-md-3  ">
             <div class="card h-100" style="width:250px;">
               <img class="card-img-top" src="{% static "pic examples/250-150/huanggua.jpg" %}"  style="width:250px;height:150px;">
               <div class="card-body">
                 <h4 class="card-title">
-                  <a href="/Product/Detail/">黄瓜一号</a>
+                  <a href="/Product/Detail/{{p.id}}/">{{ p.name}}</a>
                 </h4>
-                <h5>￥ 25.00/500g</h5>
-                <p class="card-text">【包邮顺丰】农大姐妹  - Productdetails Test</p>
+                <h5>￥ {{p.unit_price}}/{{p.unit}}</h5>
+                <p class="card-text">{{p.details}}</p>
               </div>
             </div>
           </div>
-
-          <div class="col-md-3  ">
-            <div class="card h-100" style="width:250px;">
-              <a href="#"><img class="card-img-top" src="{% static "pic examples/250-150/huanggua2.jpg" %}"  style="width:250px;height:150px;"></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">黄瓜一号</a>
-                </h4>
-                <h5>￥ 25.00/500g</h5>
-                <p class="card-text">【包邮顺丰】农大姐妹 水果小黄瓜5斤 现摘小青瓜 山东寿光特产蔬菜沙拉菜水果黄瓜</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3  ">
-            <div class="card h-100" style="width:250px;">
-              <img class="card-img-top" src="{% static "pic examples/250-150/huanggua.jpg" %}"  style="width:250px;height:150px;">
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="/Product/Detail/">黄瓜一号</a>
-                </h4>
-                <h5>￥ 25.00/500g</h5>
-                <p class="card-text">【包邮顺丰】农大姐妹  - Productdetails Test</p>
-              </div>
-            </div>
-          </div>
-		  
-          <div class="col-md-3  ">
-            <div class="card h-100" style="width:250px;">
-              <a href="#"><img class="card-img-top" src="{% static "pic examples/250-150/huanggua2.jpg" %}"  style="width:250px;height:150px;"></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">黄瓜一号</a>
-                </h4>
-                <h5>￥ 25.00/500g</h5>
-                <p class="card-text">【包邮顺丰】农大姐妹 水果小黄瓜5斤 现摘小青瓜 山东寿光特产蔬菜沙拉菜水果黄瓜</p>
-              </div>
-            </div>
-          </div>
+		  {% endfor %}
 
 
 

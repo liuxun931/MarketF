@@ -53,8 +53,8 @@ class ProductDetail(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['product'] = Products.objects.order_by('pk')[:20]
-        context['img'] = ProductImgs.objects.all()[:3]
+        pk = context['pk']  
+        context['product'] = Products.objects.get(id = pk)
         qr_url = self.request.get_raw_uri()
         # print(self.request.get_raw_uri())
 
