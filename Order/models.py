@@ -3,9 +3,9 @@ from django.db import models
 from datetime import date
 from django.utils.timezone import now
 
-from User.models import EndUser
-from Pay.models import Payment
-from Product.models import Products
+#from User.models import EndUser
+#from Pay.models import Payment
+#from Product.models import Products
 
 
 
@@ -54,7 +54,7 @@ class Order(AbstractOrder):
                                 on_delete=models.CASCADE, 
                                 null=True, 
                                 related_name='get_orderscore',
-                                verbose_name = '下单',)
+                                verbose_name = '顾客',)
     
     cost = models.IntegerField(default = 0, verbose_name = '金额')
     goods = models.ManyToManyField("Product.Products", symmetrical=False,  verbose_name = '订单商品')

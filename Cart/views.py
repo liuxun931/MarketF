@@ -25,16 +25,32 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 import json,time
 
 #import django auth
-from django.contrib.auth.mixins import LoginRequiredMixin,PermissionRequiredMixin
-from django.contrib.auth.decorators import login_required, permission_required
-from django.contrib.auth import authenticate,login,logout
 from Fmarket.views import MyPermRequireMixin
 
+from django.utils.timezone import now
 
-class CartView(LoginRequiredMixin,TemplateView):
+
+class CartView(MyPermRequireMixin,TemplateView):
+    permission_required = ('Cart.view_cart', )
     def get_context_data(self, **kwargs):
         self.template_name = 'Cart/cart.html'
         context = super().get_context_data(**kwargs)
         
-        context['enduser'] = self.request.user.enduser
+        context['user'] = self.request.user.enduser
+        context['cart'] = Cart.objects.filter(user=self.request.user.enduser)
+        self.request.session['user_id'] = 'liuxun'
+        print(self.request.session['user_id'])
+        
+        #self.request.session['username'] = self.request.user.enduser
         return context
+        
+        
+        
+class AddtoCart(MyPermRequireMixin,TemplateView):
+    pass
+    
+class DeletefromCart(MyPermRequireMixin,TemplateView):
+    pass
+
+class CartCheckout(MyPermRequireMixin,TemplateView):
+    pass

@@ -5,6 +5,7 @@ from Order.models import Order,OrderStatus
 from Product.models import Products
 from Ship.models import Shipment, ShippingAddress
 from Pay.models import Payment
+from Cart.models import Cart
 
 # Register your models here.
 
@@ -20,6 +21,7 @@ admin.site.register(Payment)
 admin.site.register(Products)
 admin.site.register(ShippingAddress)
 admin.site.register(Shipment)
+admin.site.register(Cart)
 
 @admin.register(EndUser)
 class EndUserAdmin(admin.ModelAdmin):

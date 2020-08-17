@@ -34,4 +34,4 @@ class ProductImgs(models.Model):
     image = models.ImageField(upload_to='media', height_field=300, width_field=450, max_length=300, )
     
     def __unicode__(self):  
-        return self.title
+        return self.img_title
