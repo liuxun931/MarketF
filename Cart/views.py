@@ -31,7 +31,8 @@ from django.utils.timezone import now
 
 
 class CartView(MyPermRequireMixin,TemplateView):
-    permission_required = ('Cart.view_cart', )
+    permission_required = ('Cart.view_cart')
+    template_name = 'Cart/cart.html'
     def get_context_data(self, **kwargs):
         self.template_name = 'Cart/cart.html'
         context = super().get_context_data(**kwargs)
@@ -46,11 +47,34 @@ class CartView(MyPermRequireMixin,TemplateView):
         #self.request.session['username'] = self.request.user.enduser
         return context
 
+# 接受加入购物车的post请求，处理后返回购物车页面，显示已经添加成功
 class AddtoCart(MyPermRequireMixin,TemplateView):
+    permission_required = ('Cart.add_cart')
+    template_name = 'Cart/AddtoCart.html'
+    
+    def post(self, request, *args, **kwargs):
+        print(self.request)
+        form = self.form(request.POST)
+        if form.is_valid():
+            # <process form cleaned data>
+            return HttpResponseRedirect('//')
+
+        return render(request, self.template_name, {'form': form})
+    
+    
+    def get_context_data(self, **kwargs):
+        self.template_name = 'Cart/cart.html'
+        context = super().get_context_data(**kwargs)
+        pk = self.request.session['pk']
+        context['session_pk'] = pk
+        #self.request.session['username'] = self.request.user.enduser
+        return context
     pass
     
 class DeletefromCart(MyPermRequireMixin,TemplateView):
+    permission_required = ('Cart.add_cart','Cart.view_cart')
     pass
 
 class CartCheckout(MyPermRequireMixin,TemplateView):
+    permission_required = ('Cart.add_cart','Cart.view_cart')
     pass

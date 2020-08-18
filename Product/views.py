@@ -55,9 +55,10 @@ class ProductDetail(TemplateView):
         context = super().get_context_data(**kwargs)
         pk = context['pk']  
         context['product'] = Products.objects.get(id = pk)
+        
+        self.request.session['product_id'] = pk
+        
         qr_url = self.request.get_raw_uri()
-        # print(self.request.get_raw_uri())
-
         qr_image = qrcode.make(qr_url)
         context['qr_img'] = qr_image
         path = os.path.join(os.path.realpath(os.path.curdir),'static\\temp')
