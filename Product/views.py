@@ -8,6 +8,7 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView, Proces
 
 # import models
 from Product.models import Products,ProductImgs
+from User.models import EndUser
 
 #import forms
 from User import forms
@@ -53,14 +54,21 @@ class ProductDetail(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        pk = context['pk']  
-        context['product'] = Products.objects.get(id = pk)
         
-        self.request.session['product_id'] = pk
+        # set context
+        context['product'] = Products.objects.get(pk = context['pk'])
         
+        # set sessions
+        # context['pk'] comes from url
+        self.request.session['product_id'] = context['pk']
+        self.request.session['user_id'] = str(EndUser.objects.get(username = str(self.request.user.enduser)).pk)
+        
+        # generate qr_code to share products in wechat
         qr_url = self.request.get_raw_uri()
         qr_image = qrcode.make(qr_url)
         context['qr_img'] = qr_image
         path = os.path.join(os.path.realpath(os.path.curdir),'static\\temp')
         qr_image.save(path + '/qr_code.jpg', "jpeg")
+        
         return context
+        

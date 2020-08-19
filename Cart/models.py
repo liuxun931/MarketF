@@ -18,11 +18,14 @@ class Cart(models.Model):
     
     user = models.ForeignKey("User.EndUser", on_delete=models.CASCADE, related_name='get_cart', verbose_name = '顾客',)
     
-    products = models.ForeignKey("User.EndUser", on_delete=models.CASCADE, null=True, related_name='get_product', verbose_name = '商品',)
+    products = models.ForeignKey("Product.Products", on_delete=models.CASCADE, null=True, related_name='get_product', verbose_name = '商品',)
     
     quantity = models.IntegerField(default = 1, verbose_name = '数量')
     
     adddate = models.DateField(auto_now=True, verbose_name = '加入购物车日期')
     
     def __str__(self):
-        return self.cartid 
+        return str(self.cartid)
+    
+    # def get_absolute_url(self):
+        # return reverse('author-detail', kwargs={'pk': self.pk})

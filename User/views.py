@@ -65,12 +65,9 @@ class UserCreate(MyPermRequireMixin, CreateView):
         #  'make_password' to make 'password' in request.POST from raw string format to harsh.
         request.POST = request.POST.copy()
         request.POST['password'] = make_password(request.POST['password'])
-        #print(request.POST['password'] )
         return super(UserCreate, self).post(request, **kwargs)
         
 # --------------------end Fmarket view----------------------------------
-
-
 
 
 # -------------------Portal  views --------------------------------

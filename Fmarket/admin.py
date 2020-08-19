@@ -21,7 +21,7 @@ admin.site.register(Payment)
 admin.site.register(Products)
 admin.site.register(ShippingAddress)
 admin.site.register(Shipment)
-admin.site.register(Cart)
+# admin.site.register(Cart)
 
 @admin.register(EndUser)
 class EndUserAdmin(admin.ModelAdmin):
@@ -31,7 +31,7 @@ class EndUserAdmin(admin.ModelAdmin):
     list_filter = ('is_staff', 'groups')
     list_max_show_all = 50
     list_per_page = 50
-    pass
+
     
 @admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
@@ -40,4 +40,12 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('orderer', 'cost','orderdate', 'payment_type',)
     list_max_show_all = 50
     list_select_related = ('orderer',)
-    pass
+    
+        
+@admin.register(Cart)
+class CartAdmin(admin.ModelAdmin):
+    date_hierarchy = 'adddate'
+    empty_value_display = '-empty-'
+    list_display = ('cartid', 'user', 'products', 'quantity', 'adddate')
+    list_max_show_all = 50
+    list_select_related = ('user','products')

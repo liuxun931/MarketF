@@ -8,5 +8,5 @@ from Cart import views
 
 urlpatterns = [
     path(r'', views.CartView.as_view(), name ='cartview' ),
-    path(r'AddtoCart/', views.AddtoCart.as_view(), name ='AddtoCart' ),
+    path(r'AddtoCart/<int:pk>/', views.AddtoCart.as_view(), name ='AddtoCart' ),
 ]

@@ -89,8 +89,11 @@
 	</div>
 	
 	
-	<form method="post" action="/Cart/AddtoCart/?productid={{product.id}}" > {% csrf_token %} 
+	<!-- <form method="post" action="/Cart/AddtoCart/?productid={{product.id}}" > {% csrf_token %}  -->
+	<form method="post" action="/Cart/AddtoCart/{{product.id}}/" > {% csrf_token %} 
+	
 	<div class="form-group">
+	
 	<!-- row 3 : 价格 -->
 	<div class="row" style="padding-bottom:15px;">
 	
@@ -103,9 +106,11 @@
 	<div class="row" style="padding-bottom:15px;">
 		<div class="col-md-3">
 		<label for="number-input" >数量: </label>	
-		<input type="number" id="number-input" style="width:50px;"  min="1" max="100"  value="1"> </input>
+		<input type="number" name="quantity" id="number-input" style="width:50px;"  min="1" max="100"  value="1"> </input>
 		</div>
 	</div>
+	
+	</div>  <!-- end form-group -->
 	
 	<!-- row 5 : 加入购物车 -->
 	<div class="row" style="padding-top:5px;">
