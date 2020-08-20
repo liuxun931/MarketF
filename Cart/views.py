@@ -2,7 +2,6 @@ from django.shortcuts import render
 
 # Create your views here.
 
-
 # import models
 from Cart.models import Cart
 from User.models import EndUser
@@ -21,7 +20,6 @@ from django.views.generic.edit import FormView, DeleteView, UpdateView
 from Fmarket.views import MyPermRequireMixin
 
 from django.utils.timezone import now
-
 
 class CartView(MyPermRequireMixin,TemplateView):
     permission_required = ('Cart.view_cart')
@@ -43,7 +41,7 @@ class CartView(MyPermRequireMixin,TemplateView):
             context['products'] = context['products'] | Products.objects.filter(pk = context['cart'][i].products_id)
         
         for i in range(len(context['cart'])):
-            context['items'] += ((context['cart'][i].products) ,(context['products'][i].unit_price), (context['cart'][i].quantity ))
+            context['items'] += ((str(context['cart'][i].products) ,int(context['products'][i].unit_price), int(context['cart'][i].quantity )),)
         print( context['items'] )
         return context
 
@@ -95,15 +93,7 @@ class AddtoCart(MyPermRequireMixin, FormView):
             return self.form_invalid(form)
 
         return super(AddtoCart, self).post(request, **kwargs)
-
-    # def get_context_data(self, **kwargs):
-        # self.template_name = 'Cart/cart.html'
-        # context = super().get_context_data(**kwargs)
-        # pk = self.request.session['pk']
-        # context['session_pk'] = pk
-
-        # return context
-    
+ 
 class DeletefromCart(MyPermRequireMixin,TemplateView):
     permission_required = ('Cart.add_cart','Cart.view_cart')
     pass
