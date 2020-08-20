@@ -26,14 +26,25 @@ from django.utils.timezone import now
 class CartView(MyPermRequireMixin,TemplateView):
     permission_required = ('Cart.view_cart')
     template_name = 'Cart/cart.html'
+    '''
+    1. 进入本人的购物车，列出本人加入购物车的产品和总价计算。（参考京东）
+    2. 购物车中的增删查改（ajax or form）
+    '''
     def get_context_data(self, **kwargs):
-        self.template_name = 'Cart/cart.html'
         context = super().get_context_data(**kwargs)
+        context['cart'] = Cart.objects.filter(user = self.request.user.enduser)
+        # 设置一个空的queryset
+        context['products'] = Products.objects.filter(pk = 0)
+        context['items'] = tuple()
+        # 获取价格
+        for i in range(len(context['cart'])):
+            # 用 “|” 来合并queryset
+            # 获取user相关的cart->products
+            context['products'] = context['products'] | Products.objects.filter(pk = context['cart'][i].products_id)
         
-        context['user'] = self.request.user.enduser
-
-        self.request.session['user_name'] = 'liuxun'
-
+        for i in range(len(context['cart'])):
+            context['items'] += ((context['cart'][i].products) ,(context['products'][i].unit_price), (context['cart'][i].quantity ))
+        print( context['items'] )
         return context
 
 # 接受加入购物车的post请求，处理后返回购物车页面，显示已经添加成功
@@ -53,7 +64,7 @@ class AddtoCart(MyPermRequireMixin, FormView):
         
         # 获取用户输入的数量
         qnt = int(request.POST.get('quantity'))
-        print("qnt = " + str(qnt) )
+        
         #获取商品名称
         product_id = request.session['product_id']
         #product1 = Products.objects.get(id = product_id)
@@ -65,13 +76,12 @@ class AddtoCart(MyPermRequireMixin, FormView):
         conditions = {'user': uid, 'products':product_id,}
 
         try:
-            cart = Cart.objects.all().filter(**conditions)
+            cart = Cart.objects.filter(**conditions)
             if cart.exists():
-                cart[0].quantity = int(cart[0].quantity) + int(qnt)
-                cart[0].save()
-                print("add to current cart.")
-                print("cart quantity = " + cart[0].quantity)
-                
+                cart.update(quantity = (cart[0].quantity + qnt))
+                print("update cart : " + str(cart[0]))
+                print("qnt = " + str(qnt) )
+                print("products = " + str(cart[0].products) )
             else:
                 print("trying set new cart.")
                 cart = Cart.objects.create(user = EndUser.objects.get(pk = uid), products=Products.objects.get(pk = product_id), quantity=qnt)

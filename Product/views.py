@@ -64,11 +64,10 @@ class ProductDetail(TemplateView):
         self.request.session['user_id'] = str(EndUser.objects.get(username = str(self.request.user.enduser)).pk)
         
         # generate qr_code to share products in wechat
-        qr_url = self.request.get_raw_uri()
-        qr_image = qrcode.make(qr_url)
-        context['qr_img'] = qr_image
-        path = os.path.join(os.path.realpath(os.path.curdir),'static\\temp')
-        qr_image.save(path + '/qr_code.jpg', "jpeg")
+        # qr_url = self.request.get_raw_uri()
+        # qr_image = qrcode.make(qr_url)
+        # context['qr_img'] = qr_image
+        # path = os.path.join(os.path.realpath(os.path.curdir),'static\\temp')
+        # qr_image.save(path + '/qr_code.jpg', "jpeg")
         
         return context
-        
