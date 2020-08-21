@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
+import json
 
 # import models
 from Cart.models import Cart
@@ -33,16 +34,23 @@ class CartView(MyPermRequireMixin,TemplateView):
         context['cart'] = Cart.objects.filter(user = self.request.user.enduser)
         # 设置一个空的queryset
         context['products'] = Products.objects.filter(pk = 0)
-        context['items'] = tuple()
+        context['items'] = tuple('')
+        context['list'] = []
+        
         # 获取价格
         for i in range(len(context['cart'])):
             # 用 “|” 来合并queryset
             # 获取user相关的cart->products
             context['products'] = context['products'] | Products.objects.filter(pk = context['cart'][i].products_id)
         
+        k=0
         for i in range(len(context['cart'])):
-            context['items'] += ((str(context['cart'][i].products) ,int(context['products'][i].unit_price), int(context['cart'][i].quantity )),)
-        print( context['items'] )
+            context['items'] += ((str(context['cart'][i].products) ,int(context['products'][i].unit_price), int(context['cart'][i].quantity ),k),)
+            context['list'] += [k]
+            k += 1
+        
+        # print(context['items'])
+        
         return context
 
 # 接受加入购物车的post请求，处理后返回购物车页面，显示已经添加成功
@@ -77,15 +85,15 @@ class AddtoCart(MyPermRequireMixin, FormView):
             cart = Cart.objects.filter(**conditions)
             if cart.exists():
                 cart.update(quantity = (cart[0].quantity + qnt))
-                print("update cart : " + str(cart[0]))
-                print("qnt = " + str(qnt) )
-                print("products = " + str(cart[0].products) )
+                # print("update cart : " + str(cart[0]))
+                # print("qnt = " + str(qnt) )
+                # print("products = " + str(cart[0].products) )
             else:
-                print("trying set new cart.")
+                # print("trying set new cart.")
                 cart = Cart.objects.create(user = EndUser.objects.get(pk = uid), products=Products.objects.get(pk = product_id), quantity=qnt)
-                print("set new cart.")
+                #print("set new cart.")
         except:
-            print("finish in error.")
+            print("Add to Cart : finish in error.")
         
         if form.is_valid():
             return self.form_valid(form)
