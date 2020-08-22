@@ -1,10 +1,7 @@
-from django.shortcuts import render
-
 # import views
 from django.views.generic.base import TemplateView, View
 from Fmarket.views import MyPermRequireMixin
 from django.views.generic.edit import CreateView, DeleteView, UpdateView, ProcessFormView, FormMixin
-
 
 # import models
 from Product.models import Products,ProductImgs
@@ -13,12 +10,10 @@ from User.models import EndUser
 #import forms
 from User import forms
 
-
 #import qrcode
 import qrcode
 from MarketF.settings import BASE_DIR
 import os.path
-
 
 # Create your views here.
 
@@ -40,12 +35,8 @@ class ProductCreate(MyPermRequireMixin, CreateView):
     fields = ['name', 'catalog', 'unit', 'unit_price', 'place', 'details', 'is_onsale']
     template_name = 'Product/product_create.html'
     success_url = '/Product/'
-    
 
 # --------------------end Fmarket view----------------------------------
-
-
-
 
 # -------------------Portal  views --------------------------------
 

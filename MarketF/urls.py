@@ -42,9 +42,12 @@ urlpatterns = [
     path('Order/', include('Order.urls')),
     path('Ship/', include('Ship.urls')),
     path('Cart/', include('Cart.urls')),
-
+    path('Pay/', include('Pay.urls')),
     path('DashBoard/', include('DashBoard.urls')),
-    #path('Pay/', include('Pay.urls')),
+    
+    
+    
+    # path - portal
     path(r'Portal/', views.PortalView.as_view(),),
     
     # sitemap path
