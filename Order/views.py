@@ -6,13 +6,14 @@ from django.shortcuts import HttpResponse
 from User.models import EndUser
 from Order.models import Order
 from Product.models import Products
+from Pay.models import Payment
 from Ship.models import Shipment, ShippingAddress
 
 # import view class
 from django.views.generic.detail import DetailView
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormView
 from Fmarket.views import MyPermRequireMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -22,8 +23,39 @@ from django.utils.timezone import now
 
 #import form
 from Order.forms import OrderCreateForm
+from Cart.forms import AddtoCartForm
 
 # Create your views here.
+
+class OrderTest(MyPermRequireMixin, TemplateView, FormView):
+    '''
+    1. 接受购物车提交到的货物列表；
+    2. 选择或输入收货地址；
+    3. 提交订单到支付；
+    '''
+
+    permission_required = ('Cart.view_cart')
+    template_name = 'Pay/checkout.html'
+    model = Payment
+    form_class = AddtoCartForm
+    success_url = '/Pay/'
+
+    def post(self, request, *args, **kwargs):
+        form = self.get_form()
+        if request.POST:
+            print(request.POST)
+            print(len(request.POST))
+            for i in request.POST:
+                print(i+ ":" +request.POST[i])
+        return super(OrderTest, self).post(request, **kwargs)
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        
+        return context
+
+
+
 
 class OrderList(MyPermRequireMixin, ListView):
     permission_required = ('Order.view_order', )

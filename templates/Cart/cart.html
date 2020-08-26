@@ -3,9 +3,6 @@
 
 {% block cart %}
 
-
-
-
 <script type="text/javascript">
 // 计算购物车里选中商品的总价；
 // 将购物车中选中商品的明细（products 和 数量），订单总金额提交到后台。
@@ -90,7 +87,7 @@ $(document).ready(function(){
 
 <div class="col-10 offset-1"> 
 
-<form method="post" action="/Pay/" > {% csrf_token %} 
+<form method="post" action="/Order/" > {% csrf_token %} 
 
 <div class="form-group">
 

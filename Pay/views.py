@@ -36,6 +36,10 @@ class CheckOut(MyPermRequireMixin, FormView, TemplateView):
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         request.POST = request.POST.copy()
+        if request.POST:
+            print(request.POST)
+            for i in request.POST:
+                print(i)
         return super(CheckOut, self).post(request, **kwargs)
     
     
