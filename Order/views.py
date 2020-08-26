@@ -35,7 +35,7 @@ class OrderTest(MyPermRequireMixin, TemplateView, FormView):
     '''
 
     permission_required = ('Cart.view_cart')
-    template_name = 'Pay/checkout.html'
+    template_name = 'Order/checkout.html'
     model = Payment
     form_class = AddtoCartForm
     success_url = '/Pay/'
