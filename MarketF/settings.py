@@ -83,6 +83,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
 # csrf error with ajax request
 CSRF_COOKIE_HTTPONLY = False
 CSRF_COOKIE_SECURE = True
