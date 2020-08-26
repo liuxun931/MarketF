@@ -133,23 +133,53 @@ $(document).ready(function(){
 	</div>
 	
 	
-	<div class="row form-inline" id="row2.2-submit">
+	<div class="row form-inline" id="row2.2-submit" >
 
-		<label> 总价：</label><input id="sum-order" name="sum-cart" type="value" class="form-control" style="width:80px;" readonly="true" /> 
-			
+		<div class="col-md-4 offset-2">
+		
 		<button  id="btn-sum" class="btn btn-outline-danger" type="submit" value="Save" >提交订单：</button> 
-
-
+		
+		</div>
+		
+		<div class="col-md-4">
+		<a> 总价：</a>
+		<input id="sum-order" name="sum-cart" type="value" class="form-control" style="width:80px;" readonly="true" /> 
+		</div>
 	</div>
+
+
+	<div class="row" id ="row2.3-ChoseAddr" style="padding-top:40px;">
+	
+		<div class="col-md-4 offset-1">
+		
+			<a>请选择/输入您的收货地址：</a><br>
+			<textarea id="address" name="address" cols="30" rows="8">例如：</textarea>
+			
+		</div>
+		
+		<div class="col-md-3 offset-8">
+			<input type="radio" /><p>地址1</p>
+			<input type="radio" /><p>地址1</p>
+			<input type="radio" /><p>地址1</p>
+			<input type="radio" /><p>地址1</p>
+		</div>
+		
+	</div>
+
 
 </div><!-- end form-group -->
 
-</form>
+</form><!-- end form -->
 
 
 </div>
 
-</div>
+</div> <!-- end row2 -->
+
+
+
+
+
 
 </div>
 
