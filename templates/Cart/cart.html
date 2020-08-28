@@ -4,6 +4,7 @@
 {% block cart %}
 
 <script type="text/javascript">
+
 // 计算购物车里选中商品的总价；
 // 将购物车中选中商品的明细（products 和 数量），订单总金额提交到后台。
 
@@ -11,8 +12,10 @@ $(document).ready(function(){
 		// set sum price
 		//get <input> in table
 		sessionStorage.clear();
-		var inp = document.getElementById("cart-table").getElementsByTagName("input")
-		var l = (inp.length)/2
+		//var inp = document.getElementById("cart-table").getElementsByTagName("input")
+		var inp = document.getElementsByName("mycheckbox")
+		var l = (inp.length)
+
 		function sum_price(){
 			var table = document.getElementById("cart-table"); 
 			var rows = table.rows;   
@@ -64,12 +67,24 @@ $(document).ready(function(){
 			sum_price();
 		})
 		
+		//set addr from radio button
 		
-		$("btn-sum").click(function(){
-			console.log("button");
-		})
+		getaddress = function(x){
+
+			document.getElementById("addressbox").value = x.nextElementSibling.innerText
+		}
+
+
 		
+		//$("btn-sum").click(function(){
+		//	console.log("button");
+		//})
+		
+		
+
 	})
+
+
 
 </script>
 
@@ -77,8 +92,10 @@ $(document).ready(function(){
 <div class="container">
 
 <div class="row" id="row1">
-	<div class="col-4 offset-4 center"> 
+	<div class="col-4 offset-4 text-center"> 
+	<h1 class="page-header">
 	<a style="color:green;font-size:large;padding-bottom:25px;padding-top:30px;">我的购物车</a>
+	</h1>
 	</div>
 </div>
 
@@ -122,7 +139,8 @@ $(document).ready(function(){
 					</td>		
 					<td>
 						<!-- 购买 -->
-						<input type="checkbox" name="ckipt-{{t.3}}"  id="ckb-{{t.3}}" style="width:20px;" > </input>
+						<input type="checkbox" name="mycheckbox" id="ckb-{{t.3}}" style="width:20px;" /> 
+						<!-- <input type="checkbox" name="ckipt-{{t.3}}" name="mycheckbox" id="ckb-{{t.3}}" style="width:20px;" />  -->
 					</td>
 				</tr>
 			{% endfor %}
@@ -132,44 +150,55 @@ $(document).ready(function(){
 	
 	</div>
 	
+	<h5 class="page-header"></h5>
+
+	<div class="row show-grid row-cols-2" id ="row2.3-ChoseAddr" style="padding-top:40px;">
 	
-	<div class="row form-inline" id="row2.2-submit" >
-
-		<div class="col-md-4 offset-2">
-		
-		<button  id="btn-sum" class="btn btn-outline-danger" type="submit" value="Save" >提交订单：</button> 
-		
-		</div>
-		
-		<div class="col-md-4 offset-0">
-		<a> 总价：</a>
-		<input id="sum-order" name="sum-cart" type="value" class="form-control" style="width:80px;" readonly="true" /> 
-		</div>
-	</div>
-
-
-	<div class="row row-cols-2" id ="row2.3-ChoseAddr" style="padding-top:40px;">
-	
-		<div class="col-md-4 ">
+		<div class="col-sm-4 ">
 		
 			<a>请选择/输入您的收货地址：</a><br>
-			<textarea id="address" name="address" cols="30" rows="8">例如：</textarea>
+			<textarea id="addressbox" name="addressbox" cols="30" rows="8">例如：</textarea>
 			
 		</div>
 		
-		<div class="col-md-4 offset-6">
+		<div class="col-sm-8 col-sm-offset-4">
+		
+			<table>
 			{% for addr in addrs %}
+				<tr>
+				<td>
 			<a>{{addr.addr_name}}</a>
-			<input type="radio" /><p>
+			<input name="myaddr" type="radio" onclick="getaddress(this);"/>
+			<p>
 			{{addr.country}}{{addr.province}}
 			{{addr.City}}{{addr.District}}
 			{{addr.Street}}{{addr.Details}}
 			{{addr.Receiver_name}}{{addr.Receiver_phone}}
 			</p>
-
-			{% endfor %}
+				</td>
+				</tr>
+				{% endfor %}
+			</table>
+			
 		</div>
+		<!-- <div class="col-sm-4 col-sm-offset-8"></div> -->
 		
+	</div>
+
+	<h5 class="page-header"></h5>
+
+	<div class="row form-inline" id="row2.2-submit" >
+
+	<div class="col-md-4 offset-2">
+	
+	<button  id="btn-sum" class="btn btn-outline-danger" type="submit" value="Save" >提交订单：</button> 
+	
+	</div>
+	
+	<div class="col-md-4 offset-0">
+	<a> 总价：</a>
+	<input id="sum-order" name="sum-cart" type="value" class="form-control" style="width:80px;" readonly="true" /> 
+	</div>
 	</div>
 
 </div><!-- end form-group -->

@@ -74,8 +74,13 @@
 				{% if user.username == '' %}
 					<p><a href="/accounts/login/"><div class="">登录</div></a><p/>
 				{% else %}
-					<!-- <p>您好：<a href="/User/home/{{user.pk}}">{{user.username}}</a>, <a href='/accounts/logout/'>退出登录</a></p> -->
-					<p><div>您好：<a href="/User/home/">{{user.username}},</a></div> <div class=""><a href='/accounts/logout/'> 退出登录</a></div></p>
+					<p>
+						<div>您好：<a href="/User/home/">{{user.username}}, </a></div> 
+						<div style="margin-left:20px;"><a href='/accounts/logout/'> 退出登录</a></div>
+						</p>
+					<p>
+						<div style="margin-left:20px;"><a href="/Cart/"> 我的购物车</a></div>
+					</p>
 				{% endif%}
 			</div>
 				

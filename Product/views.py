@@ -52,7 +52,13 @@ class ProductDetail(TemplateView):
         # set sessions
         # context['pk'] comes from url
         self.request.session['product_id'] = context['pk']
-        self.request.session['user_id'] = str(EndUser.objects.get(username = str(self.request.user.enduser)).pk)
+        # print(self.request.user)
+        # print(dir((self.request.user)))
+        
+        if self.request.user.is_anonymous:
+            self.request.session['user_id'] = "AnonymousUser"
+        else:
+            self.request.session['user_id'] = str(EndUser.objects.get(username = str(self.request.user.enduser)).pk)
         
         # generate qr_code to share products in wechat
         # qr_url = self.request.get_raw_uri()
