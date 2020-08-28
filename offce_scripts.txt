@@ -1,0 +1,5 @@
+cd D:
+cd .\marketf_env\
+.\Scripts\activate
+cd ..\MarketF\
+python .\manage.py runservers

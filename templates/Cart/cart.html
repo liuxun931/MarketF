@@ -141,45 +141,44 @@ $(document).ready(function(){
 		
 		</div>
 		
-		<div class="col-md-4">
+		<div class="col-md-4 offset-0">
 		<a> 总价：</a>
 		<input id="sum-order" name="sum-cart" type="value" class="form-control" style="width:80px;" readonly="true" /> 
 		</div>
 	</div>
 
 
-	<div class="row" id ="row2.3-ChoseAddr" style="padding-top:40px;">
+	<div class="row row-cols-2" id ="row2.3-ChoseAddr" style="padding-top:40px;">
 	
-		<div class="col-md-4 offset-1">
+		<div class="col-md-4 ">
 		
 			<a>请选择/输入您的收货地址：</a><br>
 			<textarea id="address" name="address" cols="30" rows="8">例如：</textarea>
 			
 		</div>
 		
-		<div class="col-md-3 offset-8">
-			<input type="radio" /><p>地址1</p>
-			<input type="radio" /><p>地址1</p>
-			<input type="radio" /><p>地址1</p>
-			<input type="radio" /><p>地址1</p>
+		<div class="col-md-4 offset-6">
+			{% for addr in addrs %}
+			<a>{{addr.addr_name}}</a>
+			<input type="radio" /><p>
+			{{addr.country}}{{addr.province}}
+			{{addr.City}}{{addr.District}}
+			{{addr.Street}}{{addr.Details}}
+			{{addr.Receiver_name}}{{addr.Receiver_phone}}
+			</p>
+
+			{% endfor %}
 		</div>
 		
 	</div>
-
 
 </div><!-- end form-group -->
 
 </form><!-- end form -->
 
-
 </div>
 
 </div> <!-- end row2 -->
-
-
-
-
-
 
 </div>
 

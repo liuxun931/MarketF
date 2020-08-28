@@ -50,8 +50,8 @@ class UserImg(models.Model):
         
 class UserAddr(models.Model):
     user = models.ForeignKey('EndUser', on_delete=models.CASCADE,)
-    country = models.CharField(max_length=12, default="中国", verbose_name='国家')
     addr_name = models.CharField(max_length=24, default="我的地址", verbose_name='地址别名')
+    country = models.CharField(max_length=12, default="中国", verbose_name='国家')
     province = models.CharField(max_length=12, default="北京", verbose_name='省份')
     City = models.CharField(max_length=12, default="北京", verbose_name='城市')
     District = models.CharField(max_length=12, default="朝阳", verbose_name='区/县')
@@ -59,3 +59,6 @@ class UserAddr(models.Model):
     Details = models.CharField(max_length=24, default="地址", verbose_name='详细地址')
     Receiver_name = models.CharField(max_length=16, default="收货人", verbose_name='收货人')
     Receiver_phone = models.CharField(max_length=12, default="联系电话", verbose_name='电话')
+    
+    def __unicode__(self):  
+        return self.Details

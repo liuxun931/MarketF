@@ -5,7 +5,7 @@ import json
 
 # import models
 from Cart.models import Cart
-from User.models import EndUser
+from User.models import EndUser, UserAddr
 from Order.models import Order
 from Product.models import Products
 from Ship.models import Shipment, ShippingAddress
@@ -49,7 +49,9 @@ class CartView(MyPermRequireMixin,TemplateView):
             context['list'] += [k]
             k += 1
         
-        # print(context['items'])
+        # render address
+        context['addrs'] = UserAddr.objects.filter(user = self.request.user.enduser)
+        
         
         return context
 
