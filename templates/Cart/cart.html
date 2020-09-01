@@ -92,12 +92,14 @@ $(document).ready(function(){
 <div class="container">
 
 <div class="row" id="row1">
-	<div class="col-4 offset-4 text-center"> 
-	<h1 class="page-header">
+
+	<div class="col-md-4  "> 
 	<a style="color:green;font-size:large;padding-bottom:25px;padding-top:30px;">我的购物车</a>
-	</h1>
+	
 	</div>
+
 </div>
+
 
 <div class="row" id="row2">
 
@@ -152,16 +154,22 @@ $(document).ready(function(){
 	
 	<h5 class="page-header"></h5>
 
+	<div class="row" >	
+	<div class="col-md-4 offset-4 text-center">
+	<div id="updatecart" class="btn btn-outline-danger">保存更改</div>
+	</div></div>
+
+
 	<div class="row show-grid row-cols-2" id ="row2.3-ChoseAddr" style="padding-top:40px;">
 	
-		<div class="col-sm-4 ">
+		<div class="col-md-4 ">
 		
 			<a>请选择/输入您的收货地址：</a><br>
 			<textarea id="addressbox" name="addressbox" cols="30" rows="8">例如：</textarea>
 			
 		</div>
 		
-		<div class="col-sm-8 col-sm-offset-4">
+		<div class="col-md-8 col-md-offset-4">
 		
 			<table>
 			{% for addr in addrs %}
@@ -187,18 +195,17 @@ $(document).ready(function(){
 
 	<h5 class="page-header"></h5>
 
-	<div class="row form-inline" id="row2.2-submit" >
+	<div class="row row-cols-2" id="row2.2-submit" >
 
-	<div class="col-md-4 offset-2">
-	
+	<div class="col-md-6 ">
 	<button  id="btn-sum" class="btn btn-outline-danger" type="submit" value="Save" >提交订单：</button> 
-	
 	</div>
 	
-	<div class="col-md-4 offset-0">
+	<div class="col-md-4 offset-6">
 	<a> 总价：</a>
 	<input id="sum-order" name="sum-cart" type="value" class="form-control" style="width:80px;" readonly="true" /> 
 	</div>
+	   
 	</div>
 
 </div><!-- end form-group -->

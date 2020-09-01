@@ -55,10 +55,30 @@ class CartView(MyPermRequireMixin,TemplateView):
         
         return context
 
+
+class UpdateCart(MyPermRequireMixin,UpdateView):
+    '''
+        接受购物车cart.html - ajax的提交变更信息，更新购物车
+    '''
+    permission_required = ('Cart.update_cart')
+    #template_name = 'Cart/cart.html'
+    model = Cart
+    
+    success_url = '/Cart/'
+    # context = super().get_context_data(**kwargs)
+    # context['cart'] = Cart.objects.filter(user = self.request.user.enduser)
+    
+    def post(self, request, *args, **kwargs):
+        form_class = AddtoCartForm
+        # request.POST = request.POST.copy()
+    pass
+
+
 # 接受加入购物车的post请求，处理后返回购物车页面，显示已经添加成功
 class AddtoCart(MyPermRequireMixin, FormView):
     '''
         接受post加入购物车；将数据更新到数据库，之后转入购物车界面，提示已经加入成功的商品。
+        更新购物车后返回一个成功信息。
     '''
     permission_required = ('Cart.add_cart')
     #template_name = 'Cart/cart.html'
