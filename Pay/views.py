@@ -24,7 +24,7 @@ from django.utils.timezone import now
 
 class CheckOut(MyPermRequireMixin, FormView, TemplateView):
     permission_required = ('Cart.view_cart')
-    template_name = 'Pay/checkout.html'
+    template_name = 'Pay/pay.html'
     model = Payment
     form_class = AddtoCartForm
     success_url = '/Pay/'
@@ -33,6 +33,7 @@ class CheckOut(MyPermRequireMixin, FormView, TemplateView):
     2. 选择或输入收货地址；
     3. 提交订单到支付；
     '''
+    
     def post(self, request, *args, **kwargs):
         form = self.get_form()
         request.POST = request.POST.copy()
@@ -45,7 +46,8 @@ class CheckOut(MyPermRequireMixin, FormView, TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        pass
+        context['sum'] = self.request.POST['sum-cart']
+        context['addr'] = self.request.POST['addressbox']
         return context
         
         
