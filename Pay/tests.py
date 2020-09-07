@@ -1,16 +1,19 @@
 from django.test import TestCase
 
-# Create your tests here.
-
-
+import crypto as Crypto
 
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import logging
 import traceback
 
+# 初始化实例和参数： 沙箱环境 debug = true
 from alipay.aop.api.AlipayClientConfig import AlipayClientConfig
+
+# 蚂蚁金服客户端
 from alipay.aop.api.DefaultAlipayClient import DefaultAlipayClient
+
+
 from alipay.aop.api.FileItem import FileItem
 from alipay.aop.api.domain.AlipayTradeAppPayModel import AlipayTradeAppPayModel
 from alipay.aop.api.domain.AlipayTradePagePayModel import AlipayTradePagePayModel
