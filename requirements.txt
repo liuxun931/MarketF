@@ -17,7 +17,7 @@ idna==2.9
 mysqlclient==1.4.6
 naked==0.1.31
 oauthlib==3.1.0
-Pillow==7.1.2
+Pillow==8.2.0
 pyasn1==0.4.8
 pycryptodome==3.9.8
 python3-openid==3.1.0
