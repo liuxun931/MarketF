@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/liuxun931/MarketF/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+You can use the [MarkerF](https://github.com/liuxun931/MarketF/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
@@ -11,12 +11,12 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 ```markdown
 Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# MarketF 是一个销售系统
+## 主要终于管理销售订单
+### 也可以对公共发布
 
-- Bulleted
-- List
+- Free for use
+- Easy to copy
 
 1. Numbered
 2. List
