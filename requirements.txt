@@ -1,7 +1,7 @@
 alipay-sdk-python==3.3.202
 alipay-sdk-python-pycryptodome==3.3.202
 asgiref==3.2.3
-certifi==2019.11.28
+certifi==2022.12.7
 chardet==3.0.4
 colorama==0.4.3
 crypto==1.4.1
