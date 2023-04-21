@@ -19,6 +19,7 @@ class Products(models.Model):
     place = models.CharField(max_length=18, blank = True)
     details = models.TextField(blank = True)
     is_onsale = models.BooleanField(default = True,)
+    version = models.PositiveIntegerField(default = 0,)
     
     def __str__(self):
         return self.name

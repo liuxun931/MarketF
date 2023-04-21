@@ -21,16 +21,16 @@ from Fmarket.sitemap import  FmarketSitemap
 # import django auth view
 from django.contrib.auth import views as auth_views
 
-from Fmarket import views
+from Fmarket import views as Fmarket_view
 
 sitemaps = {
     'static': FmarketSitemap,
 }
 
- 
+
 urlpatterns = [
     #redirects root '/'  to Fmarket app mainpage
-    path(r'', views.index, name = 'index'), 
+    path(r'', Fmarket_view.index, name = 'index'), 
     
     # admin path
     path('admin/', admin.site.urls),

@@ -70,5 +70,4 @@ class UserCreate(MyPermRequireMixin, CreateView):
 # --------------------end Fmarket view----------------------------------
 
 
-# -------------------Portal  views --------------------------------
 

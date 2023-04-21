@@ -4,7 +4,7 @@
 
 from django.urls import path
 
-from Fmarket.views import *
+from Fmarket.views import MainPage
 
 urlpatterns = [
     #  prefix : /Fmarket/
