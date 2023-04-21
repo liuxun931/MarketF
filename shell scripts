@@ -1,5 +1,0 @@
- python ./manage.py shell
- 
-from User.models import EndUser
- 
-o = EndUser.objects.filter(username = 'seller_test')
