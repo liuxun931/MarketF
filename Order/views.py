@@ -25,6 +25,28 @@ from django.utils.timezone import now
 from Order.forms import OrderCreateForm
 from Cart.forms import AddtoCartForm
 
+###
+'''
+order should record : 
+products - name, id, amount, unit price
+number of each products
+
+order_list should record: 
+each of order items. 
+amount of total price.
+buyer name, id.
+address info. 
+creation time.
+
+transaction should record: 
+one order_list. 
+one user. 
+one payment.
+creation time. 
+score_accumulate
+
+'''
+
 # Create your views here.
 
 class OrderTest(MyPermRequireMixin, TemplateView, FormView):
@@ -164,7 +186,5 @@ def Ajax_Order(request):
 ###   end ajax 
 
 
-
-###  portal views
 
 
