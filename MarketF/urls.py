@@ -21,7 +21,8 @@ from Fmarket.sitemap import  FmarketSitemap
 # import django auth view
 from django.contrib.auth import views as auth_views
 
-from Fmarket import views as Fmarket_view
+from Fmarket.views import index, PortalView
+from Fmarket.utils import LogoutView, PermissionError
 
 sitemaps = {
     'static': FmarketSitemap,
@@ -30,7 +31,7 @@ sitemaps = {
 
 urlpatterns = [
     #redirects root '/'  to Fmarket app mainpage
-    path(r'', Fmarket_view.index, name = 'index'), 
+    path(r'', index, name = 'index'), 
     
     # admin path
     path('admin/', admin.site.urls),
@@ -48,7 +49,7 @@ urlpatterns = [
     
     
     # path - portal
-    path(r'Portal/', views.PortalView.as_view(),),
+    path(r'Portal/', PortalView.as_view(),),
     
     # sitemap path
     # path(r'accounts/', include('allauth.urls')),
@@ -56,8 +57,8 @@ urlpatterns = [
     
     # django-allauth path
     path('accounts/login/', auth_views.LoginView.as_view(template_name='Fmarket/login.html')),
-    path('accounts/logout/', views.LogoutView.as_view(), ),
-    path('accounts/permission_error/', views.PermissionError.as_view(), ),
-    path('accounts/profile/', views.PortalView.as_view(),),
+    path('accounts/logout/', LogoutView.as_view(), ),
+    path('accounts/permission_error/', PermissionError.as_view(), ),
+    path('accounts/profile/', PortalView.as_view(),),
     path('accounts/', include('django.contrib.auth.urls'), ),
 ]

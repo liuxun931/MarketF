@@ -11,7 +11,7 @@ from User.models import EndUser
 from User import forms
 
 #import qrcode
-import qrcode
+# import qrcode
 from MarketF.settings import BASE_DIR
 import os.path
 

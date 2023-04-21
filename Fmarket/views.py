@@ -19,8 +19,9 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 import json,time
 
 #import django auth
-from utils import MyPermRequireMixin
-from django.contrib.auth.decorators import login_required
+from Fmarket.utils import MyPermRequireMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required 
 #from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
